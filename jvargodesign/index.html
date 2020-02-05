@@ -1,0 +1,3790 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>James Vargo</title>
+<link rel="icon" type="image/png" href="icon.png"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1.0" />
+<meta name="google-site-verification" content="Kzn-UxJPZ1HnBhER9UXTX1QMaXgaPQliJT3t7XZBu4Q" />
+
+<!--  Google Analytics  !-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-80811111-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<style>
+
+/*  Colors
+
+rgb(0, 255, 153)
+rgb(191, 132, 255)
+
+*/
+
+h1 {
+	font-family:"Avenir";
+	font-size:32px;
+	font-weight:100;
+	color:rgb(0, 255, 153);
+}
+h3 {
+	font-family:"Avenir";
+	font-size:20px;
+	font-weight:300;
+}
+p {
+	font-family:"Avenir";
+	font-size:18px;
+	color:rgb(255,255,255);
+	-webkit-transition: color 0.5s;
+	-moz-transition: color 0.5s;
+	-ms-transition: color 0.5s;
+	-o-transition: color 0.5s;
+	transition: color 0.5s;
+}
+.homeBG {
+	position:fixed;
+	left:0;
+	top:0;
+	height:100vh;
+	width:100vw;
+	background:-webkit-linear-gradient(top left,rgb(48,48,48),rgb(24,24,24));
+	background:-moz-linear-gradient(top left,rgb(48,48,48),rgb(24,24,24));
+	background:-ms-linear-gradient(top left,rgb(48,48,48),rgb(24,24,24));
+	background:-o-linear-gradient(top left,rgb(48,48,48),rgb(24,24,24));
+	background:linear-gradient(top left,rgb(48,48,48),rgb(24,24,24));
+	-webkit-transition: background-color 0.5s;
+	-moz-transition: background-color 0.5s;
+	-ms-transition: background-color 0.5s;
+	-o-transition: background-color 0.5s;
+	transition: background-color 0.5s;
+}
+.homeBG:after {
+	position:fixed;
+	content:"";
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	opacity:0;
+	background:url("background.png") 0 0 no-repeat;
+	background-size:100% 100%;
+	background-position: left top;
+	-webkit-animation: enterBG 0.5s forwards 2.5s;
+	-moz-animation: enterBG 0.5s forwards 2.5s;
+	-ms-animation: enterBG 0.5s forwards 2.5s;
+	-o-animation: enterBG 0.5s forwards 2.5s;
+	animation: enterBG 0.5s forwards 2.5s;
+	-webkit-transform: translateZ(0px);
+	-moz-transform: translateZ(0px);
+	-ms-transform: translateZ(0px);
+	-o-transform: translateZ(0px);
+	transform: translateZ(0px);
+}
+@keyframes enterBG {
+	from {opacity:0;}
+	to {opacity:1;}
+}
+.bgLeft, .bgRight {
+	position:fixed;
+	top:0;
+	height:100%;
+	width:50%;
+	opacity:0;
+	z-index:0;
+	-webkit-transition: opacity 0.55s, width 0.55s;
+	-moz-transition: opacity 0.55s, width 0.55s;
+	-ms-transition: opacity 0.55s, width 0.55s;
+	-o-transition: opacity 0.55s, width 0.55s;
+	transition: opacity 0.55s, width 0.55s;
+	-webkit-transform: translateZ(0px);
+	-moz-transform: translateZ(0px);
+	-ms-transform: translateZ(0px);
+	-o-transform: translateZ(0px);
+	transform: translateZ(0px);
+}
+.bgLeft {
+	background:linear-gradient(top left,rgb(48,48,48),rgb(24,24,24));
+	left:0;
+}
+.bgRight {
+	background:linear-gradient(top left,rgb(48,48,48),rgb(24,24,24));
+	right:0;
+}
+.titleBox {
+	position:absolute;
+	left:50%;
+	top:0%;
+	opacity:0;
+	-webkit-animation: enterTitle 1s forwards 2s;
+	-moz-animation: enterTitle 1s forwards 2s;
+	-ms-animation: enterTitle 1s forwards 2s;
+	-o-animation: enterTitle 1s forwards 2s;
+	animation: enterTitle 1s forwards 2s;
+}
+.exitTitle {
+	-webkit-animation: exitTitle 1s forwards 0s;
+	-moz-animation: exitTitle 1s forwards 0s;
+	-ms-animation: exitTitle 1s forwards 0s;
+	-o-animation: exitTitle 1s forwards 0s;
+	animation: exitTitle 1s forwards 0s;
+}
+.reEnterTitle {
+	-webkit-animation: enterTitle 1s forwards 0s;
+	-moz-animation: enterTitle 1s forwards 0s;
+	-ms-animation: enterTitle 1s forwards 0s;
+	-o-animation: enterTitle 1s forwards 0s;
+	animation: enterTitle 1s forwards 0s;
+}
+.title, .subtitle {
+	position:relative;
+	left:-50%;
+	text-align:center;
+}
+.subtitleBox {
+	position:absolute;
+	left:50%;
+	top:18%;
+}
+.uiux, .comp {
+	color:rgb(255,255,255);
+	-webkit-transition: color 0.5s, left 0.5s;
+	-moz-transition: color 0.5s, left 0.5s;
+	-ms-transition: color 0.5s, left 0.5s;
+	-o-transition: color 0.5s, left 0.5s;
+	transition: color 0.5s, left 0.5s;
+	position:relative;
+	left:-50%;
+	text-align:center;
+	height:40px;
+	line-height:40px;
+	top:-40px;
+}
+.uiuxBox, .compBox {
+	position:absolute;
+	opacity:0;
+	-webkit-transition: top 1s, opacity 1s;
+	-moz-transition: top 1s, opacity 1s;
+	-ms-transition: top 1s, opacity 1s;
+	-o-transition: top 1s, opacity 1s;
+	transition: top 1s, opacity 1s;
+}
+.uiuxBox {
+	top:45vh;
+	left:25vw;
+	-webkit-animation: enterUIUX 1s forwards 1.5s;
+	-moz-animation: enterUIUX 1s forwards 1.5s;
+	-ms-animation: enterUIUX 1s forwards 1.5s;
+	-o-animation: enterUIUX 1s forwards 1.5s;
+	animation: enterUIUX 1s forwards 1.5s;
+}
+.compBox {
+	top:55vh;
+	left:75vw;
+	-webkit-animation: enterComp 1s forwards 1.5s;
+	-moz-animation: enterComp 1s forwards 1.5s;
+	-ms-animation: enterComp 1s forwards 1.5s;
+	-o-animation: enterComp 1s forwards 1.5s;
+	animation: enterComp 1s forwards 1.5s;
+}
+.diagonal {
+	position:absolute;
+	top:50vh;
+	left:50vw;
+	height:0vh;
+	width:1px;
+	opacity:1;
+	transform:rotate(0deg);
+	background-color:rgb(0, 255, 153);
+	-webkit-animation: enterDiagonal 1s forwards 0.5s;
+	-moz-animation: enterDiagonal 1s forwards 0.5s;
+	-ms-animation: enterDiagonal 1s forwards 0.5s;
+	-o-animation: enterDiagonal 1s forwards 0.5s;
+	animation: enterDiagonal 1s forwards 0.5s;
+}
+.uiux_underline, .comp_underline {
+	background-color:rgb(255,255,255);
+	-webkit-transition: width 0.5s, background-color 0.5s;
+	-moz-transition: width 0.5s, background-color 0.5s;
+	-ms-transition: width 0.5s, background-color 0.5s;
+	-o-transition: width 0.5s, background-color 0.5s;
+	transition: width 0.5s, background-color 0.5s;
+}
+.uiux_underline {
+	position:absolute;
+	top:42vh;
+	left:35.25vw;
+	height:0.4vh;
+	width:0vw;
+}
+.comp_underline {
+	position:absolute;
+	bottom:42vh;
+	right:35.25vw;
+	height:0.4vh;
+	width:0vw;
+}
+.returnX {
+	position:absolute;
+	top:8vh;
+	left:92vw;
+	opacity:0;
+	visibility:hidden;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition: opacity 0.5s;
+	-ms-transition: opacity 0.5s;
+	-o-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
+.returnX:hover .innerX {
+	border-color:rgba(255,255,255,1);
+	background-color:rgba(0,0,0,0.25);
+	cursor:pointer;
+}
+.returnX:hover .returnX1, .returnX:hover .returnX2 {
+	background-color:rgba(255,255,255,1);
+}
+.innerX {
+	position:relative;
+	text-align:center;
+	height:40px;
+	width:40px;
+	background-color:rgba(0,0,0,0);
+	opacity:1;
+	border:1px solid;
+	border-color:rgba(255,255,255,0.5);
+	border-radius:100%;
+	-webkit-transition: border-color 0.25s, background-color 0.25s;
+	-moz-transition: border-color 0.25s, background-color 0.25s;
+	-ms-transition: border-color 0.25s, background-color 0.25s;
+	-o-transition: border-color 0.25s, background-color 0.25s;
+	transition: border-color 0.25s, background-color 0.25s;
+}
+.returnX1, .returnX2 {
+	position:absolute;
+	top:7px;
+	left:20px;
+	width:1px;
+	height:26px;
+	background-color:rgba(255,255,255,0.5);
+	-webkit-transition: background-color 0.25s;
+	-moz-transition: background-color 0.25s;
+	-ms-transition: background-color 0.25s;
+	-o-transition: background-color 0.25s;
+	transition: background-color 0.25s;
+}
+.returnX1 {
+	transform:rotate(45deg);
+}
+.returnX2 {
+	transform:rotate(-45deg);
+}
+.socialIcons {
+	position:absolute;
+	top:13vh;
+	left:8vw;
+	width:30vw;
+	height:8vh;
+	opacity:0;
+	visibility:hidden;
+	-webkit-transition: opacity 0.5s, visibility 0.5s;
+	-moz-transition: opacity 0.5s, visibility 0.5s;
+	-ms-transition: opacity 0.5s, visibility 0.5s;
+	-o-transition: opacity 0.5s, visibility 0.5s;
+	transition: opacity 0.5s, visibility 0.5s;
+}
+.twitter, .behance, .soundcloud {
+	fill:#666666;
+}
+.twitter_box, .behance_box, .soundcloud_box {
+	position:absolute;
+	width:36px;
+	opacity:1;
+	visibility:visible;
+	cursor:pointer;
+	-webkit-transition: opacity 0.5s, visibility 0.5s;
+	-moz-transition: opacity 0.5s, visibility 0.5s;
+	-ms-transition: opacity 0.5s, visibility 0.5s;
+	-o-transition: opacity 0.5s, visibility 0.5s;
+	transition: opacity 0.5s, visibility 0.5s;
+}
+.twitter_box .twitter, .behance_box .behance, .soundcloud_box .soundcloud {
+	-webkit-transition: fill 0.5s;
+	-moz-transition: fill 0.5s;
+	-ms-transition: fill 0.5s;
+	-o-transition: fill 0.5s;
+	transition: fill 0.5s;
+}
+.twitter_box:hover .twitter, .behance_box:hover .behance, .soundcloud_box:hover .soundcloud {
+	cursor:pointer;
+	fill:#00ff99;
+}
+.twitter_box {
+	left:3px;
+	width:30px;
+	top:3px;
+}
+.behance_box {
+	left:5vw;
+	top:3px;
+}
+.soundcloud_box {
+	left:10vw;
+}
+.seeMoreBox, .listenBox {
+	position:absolute;
+	top:14.25vh;
+	font-family:"Avenir";
+	font-size:14px;
+	color:rgba(191,132,255,1);
+	opacity:0;
+	visibility:hidden;
+	-webkit-transition: opacity 0.5s, visibility 0.5s, left 0.5s;
+	-moz-transition: opacity 0.5s, visibility 0.5s, left 0.5s;
+	-ms-transition: opacity 0.5s, visibility 0.5s, left 0.5s;
+	-o-transition: opacity 0.5s, visibility 0.5s, left 0.5s;
+	transition: opacity 0.5s, visibility 0.5s, left 0.5s;
+}
+.seeMoreBox {
+	left:2vw; /* to 7vw */
+}
+.listenBox {
+	left:8.5vw; /* to 13.5vw */
+}
+
+.aboutMeBox {
+	position:absolute;
+	top:85vh;
+	left:50vw;
+	opacity:0;
+	-webkit-animation: aboutMeEnterAnim 0.5s forwards 2.25s;
+	-moz-animation: aboutMeEnterAnim 0.5s forwards 2.25s;
+	-ms-animation: aboutMeEnterAnim 0.5s forwards 2.25s;
+	-o-animation: aboutMeEnterAnim 0.5s forwards 2.25s;
+	animation: aboutMeEnterAnim 0.5s forwards 2.25s;
+}
+.aboutMeBox:hover p {
+	color:rgb(0, 255, 153);
+	cursor:pointer;
+}
+.aboutMe {
+	position:relative;
+	left:-50%;
+	text-align:center;
+}
+.exitAboutMe {
+	-webkit-animation: aboutMeExitAnim 1s forwards 0s;
+	-moz-animation: aboutMeExitAnim 1s forwards 0s;
+	-ms-animation: aboutMeExitAnim 1s forwards 0s;
+	-o-animation: aboutMeExitAnim 1s forwards 0s;
+	animation: aboutMeExitAnim 1s forwards 0s;
+}
+.reEnterAboutMe {
+	-webkit-animation: aboutMeEnterAnim 0.5s forwards 0s;
+	-moz-animation: aboutMeEnterAnim 0.5s forwards 0s;
+	-ms-animation: aboutMeEnterAnim 0.5s forwards 0s;
+	-o-animation: aboutMeEnterAnim 0.5s forwards 0s;
+	animation: aboutMeEnterAnim 0.5s forwards 0s;
+}
+.contactButtonBox {
+	position:absolute;
+	top:12vh;
+	left:82vw;
+	width:100px;
+	height:50px;
+	opacity:0;
+	visibility:visible;
+	-webkit-transition: opacity 0.5s, visibility 0.5s;
+	-moz-transition: opacity 0.5s, visibility 0.5s;
+	-ms-transition: opacity 0.5s, visibility 0.5s;
+	-o-transition: opacity 0.5s, visibility 0.5s;
+	transition: opacity 0.5s, visibility 0.5s;
+}
+.contactButtonBox:hover .contactButtonText {
+	color:rgb(0, 255, 153);
+	cursor:pointer;
+}
+.contactButtonText {
+	position:absolute;
+	text-align:center;
+	margin-top:-0.5em;
+	line-height:1em;
+	top:50%;
+	height:100%;
+	width:100%;
+	color:rgb(255,255,255);
+	font-family:"Avenir";
+	font-size:20px;
+	font-weight:300;
+	-webkit-transition: color 0.5s;
+	-moz-transition: color 0.5s;
+	-ms-transition: color 0.5s;
+	-o-transition: color 0.5s;
+	transition: color 0.5s;
+}
+.contactModal {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    -webkit-transition: opacity 0.5s, visibility 0.5s;
+    -moz-transition: opacity 0.5s, visibility 0.5s;
+    -ms-transition: opacity 0.5s, visibility 0.5s;
+	-o-transition: opacity 0.5s, visibility 0.5s;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+.contactModalContent {
+	position:fixed;
+	background-color:rgba(60,60,60,0.5);
+    color:rgb(191, 132, 255);
+    top:20vh;
+    left:30vw;
+    padding:1vh 1vw;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    text-align:center;
+    border: 1px solid rgb(0, 255, 153);
+    border-radius:20px;
+    font-family:"Avenir";
+    font-size: 14px;
+    font-weight: bold;
+    width: 40vw;
+    height: 60vh;
+}
+.contactClose {
+	position:absolute;
+	top:-12vh;
+	left:60vw;
+	text-align:center;
+	height:40px;
+	width:40px;
+	background-color:rgba(0,0,0,0);
+	opacity:1;
+	border:1px solid;
+	border-color:rgba(255,255,255,0.5);
+	border-radius:100%;
+	-webkit-transition: border-color 0.25s, background-color 0.25s;
+	-moz-transition: border-color 0.25s, background-color 0.25s;
+	-ms-transition: border-color 0.25s, background-color 0.25s;
+	-o-transition: border-color 0.25s, background-color 0.25s;
+	transition: border-color 0.25s, background-color 0.25s;
+}
+.contactCloseX1, .contactCloseX2 {
+	position:absolute;
+	top:7px;
+	left:20px;
+	width:1px;
+	height:26px;
+	background-color:rgba(255,255,255,0.5);
+	-webkit-transition: background-color 0.25s;
+	-moz-transition: background-color 0.25s;
+	-ms-transition: background-color 0.25s;
+	-o-transition: background-color 0.25s;
+	transition: background-color 0.25s;
+}
+.contactCloseX1 {
+	transform:rotate(45deg);
+}
+.contactCloseX2 {
+	transform:rotate(-45deg);
+}
+.contactClose:hover {
+	border-color:rgba(255,255,255,1);
+	background-color:rgba(0,0,0,0.25);
+	cursor:pointer;
+}
+.contactClose:hover .contactCloseX1, .contactClose:hover .contactCloseX2 {
+    background-color:rgba(255,255,255,1);
+}
+.contactName, .contactEmail, .contactMessage {
+	position:absolute;
+	visibility:hidden;
+	width:100%;
+	left:0;
+}
+.contactName {
+	top:5%;
+}
+.contactEmail {
+	top:25%;
+}
+.contactMessage {
+	top:45%;
+}
+.contactInput {
+	position:absolute;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	left:7.5%;
+	width:85%;
+	padding:10px 20px;
+	border-radius:5px;
+	border:1px solid rgba(0,0,0,0);
+	background-color:rgba(255,255,255,0.75);
+	color:rgb(0,0,0);
+	font-family:"Avenir";
+	resize:none;
+	-webkit-transition: background-color 0.25s, border 0.25s, color 0.25s;
+	-moz-transition: background-color 0.25s, border 0.25s, color 0.25s;
+	-ms-transition: background-color 0.25s, border 0.25s, color 0.25s;
+	-o-transition: background-color 0.25s, border 0.25s, color 0.25s;
+	transition: background-color 0.25s, border 0.25s, color 0.25s;
+}
+.contactInput:focus {
+	outline:none;
+	border:1px solid rgb(0, 255, 153);
+	background-color:rgba(30,30,30,0.75);
+	color:rgb(255,255,255);
+}
+.inputName, .inputEmail {
+	height:10%;
+	font-weight:bold;
+	font-size:16px;
+}
+.inputName {
+	top:10%;
+}
+.inputEmail {
+	top:25%;
+}
+.inputMessage {
+	top:40%;
+	height:35%;
+	font-weight:100;
+	font-size:14px;
+	line-height:1.5em;
+}
+::-webkit-input-placeholder {
+	color:rgb(60,60,60);
+}
+:-moz-placeholder {
+	color:rgb(60,60,60);
+}
+::-moz-placeholder {
+	color:rgb(60,60,60);
+}
+:-ms-input-placeholder {
+	color:rgb(60,60,60);
+}
+.contactSendBox {
+	position:absolute;
+	width:30%;
+	height:8%;
+	left:35%;
+	top:82%;
+	background-color:rgba(150,150,150,0);
+	border:2px solid rgb(255,255,255);
+	border-radius:30px;
+	-webkit-transition: background-color 0.5s, border 0.5s;
+	-moz-transition: background-color 0.5s, border 0.5s;
+	-ms-transition: background-color 0.5s, border 0.5s;
+	-o-transition: background-color 0.5s, border 0.5s;
+	transition: background-color 0.5s, border 0.5s;
+}
+.contactSend {
+	position:absolute;
+	text-align:center;
+	top:50%;
+	margin-top:-0.45em;
+	left:0;
+	width:100%;
+	height:100%;
+	line-height:1em;
+	padding:0;
+	color:rgb(255,255,255);
+	pointer-events:none;
+	-webkit-transition: color 0.5s;
+	-moz-transition: color 0.5s;
+	-ms-transition: color 0.5s;
+	-o-transition: color 0.5s;
+	transition: color 0.5s;
+}
+.contactSendBox:hover {
+	background-color:rgb(0,0,0);
+	border:2px solid rgb(191, 132, 255);
+	cursor:pointer;
+}
+.contactSendBox:hover .contactSend {
+	color:rgb(191, 132, 255);
+}
+.errorDisplay {
+	top:93%;
+}
+
+
+/* -------------------
+-  About Me Content  -
+-------------------- */
+
+.portraitFrame {
+	position:absolute;
+	top:37.5vh;
+	left:30vw;
+	opacity:0;
+	visibility:hidden;
+	-webkit-transition: opacity 0.5s, visibility 0.5s;
+	-moz-transition: opacity 0.5s, visibility 0.5s;
+	-ms-transition: opacity 0.5s, visibility 0.5s;
+	-o-transition: opacity 0.5s, visibility 0.5s;
+	transition: opacity 0.5s, visibility 0.5s;
+}
+.portrait {
+	position:relative;
+	left:-50%;
+	width:150px;
+	height:150px;
+	background: url("portrait.jpg") 0 0 no-repeat;
+	background-size: 100% 100%;
+	border-radius:100%;
+	border:1px solid;
+	border-color:rgb(255,255,255);
+}
+.cycleTextBox {
+	position:absolute;
+	top:62.5vh;
+	left:30vw;
+	width:30vw;
+	pointer-events:none;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition: opacity 0.5s;
+	-ms-transition: opacity 0.5s;
+	-o-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
+.cycleText {
+	position:absolute;
+	width:100%;
+	left:-50%;
+	text-align:center;
+	font-family:"Avenir";
+	font-weight:800;
+	font-size:18px;
+	color:rgb(191, 132, 255);
+	opacity:0;
+}
+.cycleTextLong {
+	position:absolute;
+	width:100%;
+	left:-50%;
+	text-align:center;
+	font-family:"Avenir";
+	font-weight:800;
+	font-size:18px;
+	color:rgb(0, 255, 153);
+	opacity:0;
+}
+.cycle1 {
+	-webkit-animation: cycleTextAnim 4s ease-in-out infinite;
+	-moz-animation: cycleTextAnim 4s ease-in-out infinite;
+	-ms-animation: cycleTextAnim 4s ease-in-out infinite;
+	-o-animation: cycleTextAnim 4s ease-in-out infinite;
+	animation: cycleTextAnim 4s ease-in-out infinite;
+}
+.cycle2 {
+	-webkit-animation: cycleTextAnim 4s ease-in-out 0.5s infinite;
+	-moz-animation: cycleTextAnim 4s ease-in-out 0.5s infinite;
+	-ms-animation: cycleTextAnim 4s ease-in-out 0.5s infinite;
+	-o-animation: cycleTextAnim 4s ease-in-out 0.5s infinite;
+	animation: cycleTextAnim 4s ease-in-out 0.5s infinite;
+}
+.cycle3 {
+	-webkit-animation: cycleTextAnim 4s ease-in-out 1s infinite;
+	-moz-animation: cycleTextAnim 4s ease-in-out 1s infinite;
+	-ms-animation: cycleTextAnim 4s ease-in-out 1s infinite;
+	-o-animation: cycleTextAnim 4s ease-in-out 1s infinite;
+	animation: cycleTextAnim 4s ease-in-out 1s infinite;
+}
+.cycle4 {
+	-webkit-animation: cycleTextAnim 4s ease-in-out 1.5s infinite;
+	-moz-animation: cycleTextAnim 4s ease-in-out 1.5s infinite;
+	-ms-animation: cycleTextAnim 4s ease-in-out 1.5s infinite;
+	-o-animation: cycleTextAnim 4s ease-in-out 1.5s infinite;
+	animation: cycleTextAnim 4s ease-in-out 1.5s infinite;
+}
+.cycle5 {
+	-webkit-animation: cycleTextAnimLong 8s ease-in-out 2s infinite;
+	-moz-animation: cycleTextAnimLong 8s ease-in-out 2s infinite;
+	-ms-animation: cycleTextAnimLong 8s ease-in-out 2s infinite;
+	-o-animation: cycleTextAnimLong 8s ease-in-out 2s infinite;
+	animation: cycleTextAnimLong 8s ease-in-out 2s infinite;
+}
+.cycle6 {
+	-webkit-animation: cycleTextAnimLong 8s ease-in-out 6s infinite;
+	-moz-animation: cycleTextAnimLong 8s ease-in-out 6s infinite;
+	-ms-animation: cycleTextAnimLong 8s ease-in-out 6s infinite;
+	-o-animation: cycleTextAnimLong 8s ease-in-out 6s infinite;
+	animation: cycleTextAnimLong 8s ease-in-out 6s infinite;
+}
+.paragraph1, .paragraph2, .paragraph3 {
+	position:absolute;
+	left:40vw;
+	opacity:0;
+	-webkit-transition: opacity 0.5s, visibility 0.5s;
+	-moz-transition: opacity 0.5s, visibility 0.5s;
+	-ms-transition: opacity 0.5s, visibility 0.5s;
+	-o-transition: opacity 0.5s, visibility 0.5s;
+	transition: opacity 0.5s, visibility 0.5s;
+}
+.paragraph1 {
+	top:38vh;
+}
+.paragraph2 {
+	top:75vh;
+}
+.paragraph3 {
+	top:85vh;
+}
+.aboutMeText {
+	position:absolute;
+	font-family:"Avenir";
+	font-size:18px;
+	color:rgb(255,255,255);
+	opacity:0;
+	text-align:center;
+	white-space:nowrap;
+	overflow:hidden;
+	-webkit-transition: opacity 0.5s, visibility 0.5s;
+	-moz-transition: opacity 0.5s, visibility 0.5s;
+	-ms-transition: opacity 0.5s, visibility 0.5s;
+	-o-transition: opacity 0.5s, visibility 0.5s;
+	transition: opacity 0.5s, visibility 0.5s;
+}
+@keyframes cycleTextAnim {
+	0% {top:-5vh; opacity:0;}
+	6.75% {top:0vh; opacity:1;}
+	12.5% {top:0vh; opacity:1;}
+	19.25% {top:5vh; opacity:0;}
+	100% {top:5vh; opacity:0;}
+}
+@keyframes cycleTextAnimLong {
+	0% {top:-5vh; opacity:0;}
+	3.375% {top:0vh; opacity:1;}
+	25% {top:0vh; opacity:1;}
+	28.375% {top:5vh; opacity:0;}
+	100% {top:5vh; opacity:0;}
+}
+@keyframes charAnim {
+	/* ADJUST THESE VALUES FOR FADE CONTROL */
+	0% {opacity:0;}
+	35% {opacity:1;}
+	100% {opacity:0.6;}
+}
+
+
+
+
+/* ---------------
+-  Skills Graph  -
+---------------- */
+
+.columns {
+	position:absolute;
+	width:50vw;
+	left:7vw;
+	color:rgba(255,255,255,0.25);
+	font-size:12px;
+}
+.column1, .column2, .column3, .column4 {
+	position:relative;
+	opacity:0;
+	text-align:left;
+	width:10vw;
+}
+.column1 {
+	position:absolute;
+	left:0vw;
+}
+.column2 {
+	position:absolute;
+	left:10vw;
+}
+.column3 {
+	position:absolute;
+	left:20vw;
+}
+.column4 {
+	position:absolute;
+	left:30vw;
+}
+.columnAnim .column1 {
+	-webkit-animation: columnTextAnim 0.5s forwards;
+	-moz-animation: columnTextAnim 0.5s forwards;
+	-ms-animation: columnTextAnim 0.5s forwards;
+	-o-animation: columnTextAnim 0.5s forwards;
+	animation: columnTextAnim 0.5s forwards;
+}
+.columnAnim .column2 {
+	-webkit-animation: columnTextAnim 0.5s forwards 0.25s;
+	-moz-animation: columnTextAnim 0.5s forwards 0.25s;
+	-ms-animation: columnTextAnim 0.5s forwards 0.25s;
+	-o-animation: columnTextAnim 0.5s forwards 0.25s;
+	animation: columnTextAnim 0.5s forwards 0.25s;
+}
+.columnAnim .column3 {
+	-webkit-animation: columnTextAnim 0.5s forwards 0.5s;
+	-moz-animation: columnTextAnim 0.5s forwards 0.5s;
+	-ms-animation: columnTextAnim 0.5s forwards 0.5s;
+	-o-animation: columnTextAnim 0.5s forwards 0.5s;
+	animation: columnTextAnim 0.5s forwards 0.5s;
+}
+.columnAnim .column4 {
+	-webkit-animation: columnTextAnim 0.5s forwards 0.75s;
+	-moz-animation: columnTextAnim 0.5s forwards 0.75s;
+	-ms-animation: columnTextAnim 0.5s forwards 0.75s;
+	-o-animation: columnTextAnim 0.5s forwards 0.75s;
+	animation: columnTextAnim 0.5s forwards 0.75s;
+}
+.columnAnimReverse .column1, .columnAnimReverse .column2, .columnAnimReverse .column3, .columnAnimReverse .column4 {
+	-webkit-animation: columnTextAnimReverse 0.5s forwards;
+	-moz-animation: columnTextAnimReverse 0.5s forwards;
+	-ms-animation: columnTextAnimReverse 0.5s forwards;
+	-o-animation: columnTextAnimReverse 0.5s forwards;
+	animation: columnTextAnimReverse 0.5s forwards;
+}
+.rows {
+	position:relative;
+	left:-11vw;
+	top:3.1vh;
+	height:8vh;
+	width:16vw;
+	line-height:8vh;
+	color:rgba(255,255,255,0.5);
+	font-size:16px;
+	text-align:right;
+}
+.row1, .row2, .row3, .row4, .row5, .row6, .row7 {
+	opacity:0;
+}
+.rowAnim .row1 {
+	-webkit-animation: rowTextAnim 0.5s forwards;
+	-moz-animation: rowTextAnim 0.5s forwards;
+	-ms-animation: rowTextAnim 0.5s forwards;
+	-o-animation: rowTextAnim 0.5s forwards;
+	animation: rowTextAnim 0.5s forwards;
+}
+.rowAnim .row2 {
+	-webkit-animation: rowTextAnim 0.5s forwards 0.25s;
+	-moz-animation: rowTextAnim 0.5s forwards 0.25s;
+	-ms-animation: rowTextAnim 0.5s forwards 0.25s;
+	-o-animation: rowTextAnim 0.5s forwards 0.25s;
+	animation: rowTextAnim 0.5s forwards 0.25s;
+}
+.rowAnim .row3 {
+	-webkit-animation: rowTextAnim 0.5s forwards 0.5s;
+	-moz-animation: rowTextAnim 0.5s forwards 0.5s;
+	-ms-animation: rowTextAnim 0.5s forwards 0.5s;
+	-o-animation: rowTextAnim 0.5s forwards 0.5s;
+	animation: rowTextAnim 0.5s forwards 0.5s;
+}
+.rowAnim .row4 {
+	-webkit-animation: rowTextAnim 0.5s forwards 0.75s;
+	-moz-animation: rowTextAnim 0.5s forwards 0.75s;
+	-ms-animation: rowTextAnim 0.5s forwards 0.75s;
+	-o-animation: rowTextAnim 0.5s forwards 0.75s;
+	animation: rowTextAnim 0.5s forwards 0.75s;
+}
+.rowAnim .row5 {
+	-webkit-animation: rowTextAnim 0.5s forwards 1s;
+	-moz-animation: rowTextAnim 0.5s forwards 1s;
+	-ms-animation: rowTextAnim 0.5s forwards 1s;
+	-o-animation: rowTextAnim 0.5s forwards 1s;
+	animation: rowTextAnim 0.5s forwards 1s;
+}
+.rowAnim .row6 {
+	-webkit-animation: rowTextAnim 0.5s forwards 1.25s;
+	-moz-animation: rowTextAnim 0.5s forwards 1.25s;
+	-ms-animation: rowTextAnim 0.5s forwards 1.25s;
+	-o-animation: rowTextAnim 0.5s forwards 1.25s;
+	animation: rowTextAnim 0.5s forwards 1.25s;
+}
+.rowAnim .row7 {
+	-webkit-animation: rowTextAnim 0.5s forwards 1.5s;
+	-moz-animation: rowTextAnim 0.5s forwards 1.5s;
+	-ms-animation: rowTextAnim 0.5s forwards 1.5s;
+	-o-animation: rowTextAnim 0.5s forwards 1.5s;
+	animation: rowTextAnim 0.5s forwards 1.5s;
+}
+.rowAnimReverse .row1, .rowAnimReverse .row2, .rowAnimReverse .row3, .rowAnimReverse .row4, .rowAnimReverse .row5, .rowAnimReverse .row6, .rowAnimReverse .row7 {
+	-webkit-animation: rowTextAnimReverse 0.5s forwards;
+	-moz-animation: rowTextAnimReverse 0.5s forwards;
+	-ms-animation: rowTextAnimReverse 0.5s forwards;
+	-o-animation: rowTextAnimReverse 0.5s forwards;
+	animation: rowTextAnimReverse 0.5s forwards;
+}
+.bars {
+	position:relative;
+	top:-1.5vh;
+}
+.bar1, .bar2, .bar3, .bar4, .bar5, .bar6, .bar7 {
+	position:absolute;
+	left:7vw;
+	height:1vh;
+	width:0;
+	background-color:rgba(191, 132, 255,0.75);
+}
+.bar1 {
+	top:0vh;
+}
+.bar2 {
+	top:8vh;
+}
+.bar3 {
+	top:16vh;
+}
+.bar4 {
+	top:24vh;
+}
+.bar5 {
+	top:32vh;
+}
+.bar6 {
+	top:40vh;
+}
+.bar7 {
+	top:48vh;
+}
+.grid {
+	position:absolute;
+	left:7vw;
+	top:3vh;
+}
+.gridLine1, .gridLine2, .gridLine3, .gridLine4 {
+	position:absolute;
+	width:1px;
+	background-color:rgba(255,255,255,0.1);
+	opacity:0;
+}
+.gridLine1 {
+	left:0vw;
+}
+.gridLine2 {
+	left:10vw;
+}
+.gridLine3 {
+	left:20vw;
+}
+.gridLine4 {
+	left:30vw;
+}
+.gridAnim .gridLine1 {
+	-webkit-animation: gridLineAnim 0.5s forwards;
+	-moz-animation: gridLineAnim 0.5s forwards;
+	-ms-animation: gridLineAnim 0.5s forwards;
+	-o-animation: gridLineAnim 0.5s forwards;
+	animation: gridLineAnim 0.5s forwards;
+}
+.gridAnim .gridLine2 {
+	-webkit-animation: gridLineAnim 0.5s forwards 0.25s;
+	-moz-animation: gridLineAnim 0.5s forwards 0.25s;
+	-ms-animation: gridLineAnim 0.5s forwards 0.25s;
+	-o-animation: gridLineAnim 0.5s forwards 0.25s;
+	animation: gridLineAnim 0.5s forwards 0.25s;
+}
+.gridAnim .gridLine3 {
+	-webkit-animation: gridLineAnim 0.5s forwards 0.5s;
+	-moz-animation: gridLineAnim 0.5s forwards 0.5s;
+	-ms-animation: gridLineAnim 0.5s forwards 0.5s;
+	-o-animation: gridLineAnim 0.5s forwards 0.5s;
+	animation: gridLineAnim 0.5s forwards 0.5s;
+}
+.gridAnim .gridLine4 {
+	-webkit-animation: gridLineAnim 0.5s forwards 0.75s;
+	-moz-animation: gridLineAnim 0.5s forwards 0.75s;
+	-ms-animation: gridLineAnim 0.5s forwards 0.75s;
+	-o-animation: gridLineAnim 0.5s forwards 0.75s;
+	animation: gridLineAnim 0.5s forwards 0.75s;
+}
+.gridAnimReverse .gridLine1, .gridAnimReverse .gridLine2, .gridAnimReverse .gridLine3, .gridAnimReverse .gridLine4 {
+	-webkit-animation: gridLineAnimReverse 0.5s forwards;
+	-moz-animation: gridLineAnimReverse 0.5s forwards;
+	-ms-animation: gridLineAnimReverse 0.5s forwards;
+	-o-animation: gridLineAnimReverse 0.5s forwards;
+	animation: gridLineAnimReverse 0.5s forwards;
+}
+@keyframes rowTextAnim {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+@keyframes rowTextAnimReverse {
+	0% {opacity:1;}
+	100% {opacity:0;}
+}
+@keyframes columnTextAnim {
+	0% {opacity:0; top:-5vh;}
+	100% {opacity:1; top:0vh;}
+}
+@keyframes columnTextAnimReverse {
+	0% {opacity:1; top:0vh;}
+	100% {opacity:0; top:-5vh;}
+}
+@keyframes gridLineAnim {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+@keyframes gridLineAnimReverse {
+	0% {opacity:1;}
+	100% {opacity:0;}
+}
+
+
+
+/* ---------------
+-  UIUX Content  -
+---------------- */
+
+.uiux_content {
+	position:absolute;
+	top:0vh;
+	left:0vw;
+	opacity:0;
+	visibility:hidden;
+	font-family:"Avenir";
+}
+.uiux_buttons {
+	position:absolute;
+	opacity:0;
+	visibility:hidden;
+	-webkit-transition: opacity 1s, visibility 1s;
+	transition: opacity 1s, visibility 1s;
+}
+.uiux_skills_button {
+	position:absolute;
+	top:25vh;
+	left:25vw;
+	width:200px;
+	height:50px;
+}
+.uiux_skills_button:hover {
+	cursor:pointer;
+}
+.uiux_skills_button:hover .uiux_skills_innerButton {
+	
+}
+.uiux_skills_button:hover .uiux_skills_buttonText {
+	color:rgb(0, 255, 153) !important;
+}
+.uiux_skills_innerButton, .uiux_software_innerButton, .uiux_exp_innerButton {
+	position:relative;
+	top:-50%;
+	left:-50%;
+	width:200px;
+	height:50px;
+	/*background-color:rgba(191, 132, 255, 1);
+	border-radius:100%;
+	border:1px solid;
+	border-color:rgba(0,0,0,0);
+	-webkit-transition: background-color 0.5s, border-color 0.5s;
+	transition: background-color 0.5s, border-color 0.5s;*/
+}
+.uiux_skills_buttonText, .uiux_software_buttonText, .uiux_exp_buttonText {
+	position:absolute;
+	width:200px;
+	height:50px;
+	line-height:50px;
+	font-family:"Avenir";
+	font-size:24px;
+	color:rgb(255,255,255);
+	text-align:center;
+	-webkit-transition: color 0.5s;
+	-moz-transition: color 0.5s;
+	-ms-transition: color 0.5s;
+	-o-transition: color 0.5s;
+	transition: color 0.5s;
+	pointer-events:none;
+}
+.uiux_exp_button {
+	position:absolute;
+	top:25vh;
+	left:75vw;
+	width:200px;
+	height:50px;
+}
+.uiux_exp_button:hover {
+	cursor:pointer;
+}
+.uiux_exp_button:hover .uiux_exp_innerButton {
+	
+}
+.uiux_exp_button:hover .uiux_exp_buttonText {
+	color:rgb(0, 255, 153) !important;
+}
+.uiux_software_button {
+	position:absolute;
+	top:25vh;
+	left:50vw;
+	width:200px;
+	height:50px;
+}
+.uiux_software_button:hover {
+	cursor:pointer;
+}
+.uiux_software_button:hover .uiux_software_innerButton {
+	
+}
+.uiux_software_button:hover .uiux_software_buttonText {
+	color:rgb(0, 255, 153) !important;
+}
+
+.uiux_skills {
+	position:absolute;
+	top:32vh;
+	left:28vw;
+}
+.uiux_software {
+	position:absolute;
+	top:40vh;
+	left:28vw;
+}
+.uiux_skills_gridLines {
+	height:46vh;
+}
+.uiux_software_gridLines {
+	height:30vh;
+}
+
+
+.uiux_exp {
+	position:absolute;
+	top:40vh;
+	left:50vw;
+	opacity:0;
+	visibility:hidden;
+}
+.exp_images_box {
+	position:relative;
+	left:-50%;
+	width:800px;
+	height:200px;
+}
+.mysite, .moodmusic  {
+	position:absolute;
+	width:50%;
+	height:100%;
+}
+.mysite {
+	left:0;
+}
+.moodmusic {
+	left:50%;
+}
+.mysite img, .moodmusic img {
+	position:absolute;
+	left:0;
+	width:0;
+	height:100%;
+}
+.mysite_overlay, .moodmusic_overlay {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color:rgba(0,0,0,0.5);
+	opacity:0;
+	z-index:1;
+	-webkit-transition: opacity 0.25s;
+	-moz-transition: opacity 0.25s;
+	-ms-transition: opacity 0.25s;
+	-o-transition: opacity 0.25s;
+	transition: opacity 0.25s;
+}
+.mysite_overlay_text, .moodmusic_overlay_text {
+	position:absolute;
+	margin-top:-0.5em;
+	top:50%;
+	left:0;
+	width:100%;
+	height:100%;
+	text-align:center;
+	font-family:"Avenir";
+	font-size:14px;
+	color:rgba(255,255,255,1);
+	opacity:0;
+	z-index:2;
+	pointer-events:none;
+	-webkit-transition: opacity 0.25s;
+	-moz-transition: opacity 0.25s;
+	-ms-transition: opacity 0.25s;
+	-o-transition: opacity 0.25s;
+	transition: opacity 0.25s;
+}
+.mysite:hover .mysite_overlay, .moodmusic:hover .moodmusic_overlay {
+	opacity:1;
+}
+.mysite:hover .mysite_overlay_text, .moodmusic:hover .moodmusic_overlay_text {
+	opacity:1;
+}
+.expImagesAnim .mysite img {
+	-webkit-animation: images_anim 0.5s forwards;
+	-moz-animation: images_anim 0.5s forwards;
+	-ms-animation: images_anim 0.5s forwards;
+	-o-animation: images_anim 0.5s forwards;
+	animation: images_anim 0.5s forwards;
+}
+.expImagesAnimReverse .mysite img {
+	-webkit-animation: images_anim_reverse 0.25s forwards;
+	-moz-animation: images_anim_reverse 0.25s forwards;
+	-ms-animation: images_anim_reverse 0.25s forwards;
+	-o-animation: images_anim_reverse 0.25s forwards;
+	animation: images_anim_reverse 0.25s forwards;
+}
+.expImagesAnim .moodmusic img {
+	-webkit-animation: images_anim 0.5s forwards 0.1s;
+	-moz-animation: images_anim 0.5s forwards 0.1s;
+	-ms-animation: images_anim 0.5s forwards 0.1s;
+	-o-animation: images_anim 0.5s forwards 0.1s;
+	animation: images_anim 0.5s forwards 0.1s;
+}
+.expImagesAnimReverse .moodmusic img {
+	-webkit-animation: images_anim_reverse 0.25s forwards;
+	-moz-animation: images_anim_reverse 0.25s forwards;
+	-ms-animation: images_anim_reverse 0.25s forwards;
+	-o-animation: images_anim_reverse 0.25s forwards;
+	animation: images_anim_reverse 0.25s forwards;
+}
+@keyframes images_anim {
+	0% {left:50%; width:0;}
+	100% {left:0%; width:100%;}
+}
+@keyframes images_anim_reverse {
+	0% {left:0; width:100%;}
+	100% {left:50%; width:0;}
+}
+
+
+.uiux_skill_barAnim .bar1 {
+	-webkit-animation: uiux_skill_bar1anim 1s forwards;
+	-moz-animation: uiux_skill_bar1anim 1s forwards;
+	-ms-animation: uiux_skill_bar1anim 1s forwards;
+	-o-animation: uiux_skill_bar1anim 1s forwards;
+	animation: uiux_skill_bar1anim 1s forwards;
+}
+.uiux_skill_barAnim .bar2 {
+	-webkit-animation: uiux_skill_bar2anim 1s forwards 0.25s;
+	-moz-animation: uiux_skill_bar2anim 1s forwards 0.25s;
+	-ms-animation: uiux_skill_bar2anim 1s forwards 0.25s;
+	-o-animation: uiux_skill_bar2anim 1s forwards 0.25s;
+	animation: uiux_skill_bar2anim 1s forwards 0.25s;
+}
+.uiux_skill_barAnim .bar3 {
+	-webkit-animation: uiux_skill_bar3anim 1s forwards 0.5s;
+	-moz-animation: uiux_skill_bar3anim 1s forwards 0.5s;
+	-ms-animation: uiux_skill_bar3anim 1s forwards 0.5s;
+	-o-animation: uiux_skill_bar3anim 1s forwards 0.5s;
+	animation: uiux_skill_bar3anim 1s forwards 0.5s;
+}
+.uiux_skill_barAnim .bar4 {
+	-webkit-animation: uiux_skill_bar4anim 1s forwards 0.75s;
+	-moz-animation: uiux_skill_bar4anim 1s forwards 0.75s;
+	-ms-animation: uiux_skill_bar4anim 1s forwards 0.75s;
+	-o-animation: uiux_skill_bar4anim 1s forwards 0.75s;
+	animation: uiux_skill_bar4anim 1s forwards 0.75s;
+}
+.uiux_skill_barAnim .bar5 {
+	-webkit-animation: uiux_skill_bar5anim 1s forwards 1s;
+	-moz-animation: uiux_skill_bar5anim 1s forwards 1s;
+	-ms-animation: uiux_skill_bar5anim 1s forwards 1s;
+	-o-animation: uiux_skill_bar5anim 1s forwards 1s;
+	animation: uiux_skill_bar5anim 1s forwards 1s;
+}
+.uiux_skill_barAnim .bar6 {
+	-webkit-animation: uiux_skill_bar6anim 1s forwards 1.25s;
+	-moz-animation: uiux_skill_bar6anim 1s forwards 1.25s;
+	-ms-animation: uiux_skill_bar6anim 1s forwards 1.25s;
+	-o-animation: uiux_skill_bar6anim 1s forwards 1.25s;
+	animation: uiux_skill_bar6anim 1s forwards 1.25s;
+}
+.uiux_skill_barAnim .bar7 {
+	-webkit-animation: uiux_skill_bar7anim 1s forwards 1.5s;
+	-moz-animation: uiux_skill_bar7anim 1s forwards 1.5s;
+	-ms-animation: uiux_skill_bar7anim 1s forwards 1.5s;
+	-o-animation: uiux_skill_bar7anim 1s forwards 1.5s;
+	animation: uiux_skill_bar7anim 1s forwards 1.5s;
+}
+.uiux_skill_barAnimReverse .bar1 {
+	-webkit-animation: uiux_skill_bar1animReverse 0.5s forwards;
+	-moz-animation: uiux_skill_bar1animReverse 0.5s forwards;
+	-ms-animation: uiux_skill_bar1animReverse 0.5s forwards;
+	-o-animation: uiux_skill_bar1animReverse 0.5s forwards;
+	animation: uiux_skill_bar1animReverse 0.5s forwards;
+}
+.uiux_skill_barAnimReverse .bar2 {
+	-webkit-animation: uiux_skill_bar2animReverse 0.5s forwards;
+	-moz-animation: uiux_skill_bar2animReverse 0.5s forwards;
+	-ms-animation: uiux_skill_bar2animReverse 0.5s forwards;
+	-o-animation: uiux_skill_bar2animReverse 0.5s forwards;
+	animation: uiux_skill_bar2animReverse 0.5s forwards;
+}
+.uiux_skill_barAnimReverse .bar3 {
+	-webkit-animation: uiux_skill_bar3animReverse 0.5s forwards;
+	-moz-animation: uiux_skill_bar3animReverse 0.5s forwards;
+	-ms-animation: uiux_skill_bar3animReverse 0.5s forwards;
+	-o-animation: uiux_skill_bar3animReverse 0.5s forwards;
+	animation: uiux_skill_bar3animReverse 0.5s forwards;
+}
+.uiux_skill_barAnimReverse .bar4 {
+	-webkit-animation: uiux_skill_bar4animReverse 0.5s forwards;
+	-moz-animation: uiux_skill_bar4animReverse 0.5s forwards;
+	-ms-animation: uiux_skill_bar4animReverse 0.5s forwards;
+	-o-animation: uiux_skill_bar4animReverse 0.5s forwards;
+	animation: uiux_skill_bar4animReverse 0.5s forwards;
+}
+.uiux_skill_barAnimReverse .bar5 {
+	-webkit-animation: uiux_skill_bar5animReverse 0.5s forwards;
+	-moz-animation: uiux_skill_bar5animReverse 0.5s forwards;
+	-ms-animation: uiux_skill_bar5animReverse 0.5s forwards;
+	-o-animation: uiux_skill_bar5animReverse 0.5s forwards;
+	animation: uiux_skill_bar5animReverse 0.5s forwards;
+}
+.uiux_skill_barAnimReverse .bar6 {
+	-webkit-animation: uiux_skill_bar6animReverse 0.5s forwards;
+	-moz-animation: uiux_skill_bar6animReverse 0.5s forwards;
+	-ms-animation: uiux_skill_bar6animReverse 0.5s forwards;
+	-o-animation: uiux_skill_bar6animReverse 0.5s forwards;
+	animation: uiux_skill_bar6animReverse 0.5s forwards;
+}
+.uiux_skill_barAnimReverse .bar7 {
+	-webkit-animation: uiux_skill_bar7animReverse 0.5s forwards;
+	-moz-animation: uiux_skill_bar7animReverse 0.5s forwards;
+	-ms-animation: uiux_skill_bar7animReverse 0.5s forwards;
+	-o-animation: uiux_skill_bar7animReverse 0.5s forwards;
+	animation: uiux_skill_bar7animReverse 0.5s forwards;
+}
+@keyframes uiux_skill_bar1anim { /* HTML */
+	0% {width:0;}
+	100% {width:20vw;}
+}
+@keyframes uiux_skill_bar2anim { /* CSS */
+	0% {width:0;}
+	100% {width:26vw;}
+}
+@keyframes uiux_skill_bar3anim { /* Javascript */
+	0% {width:0;}
+	100% {width:26vw;}
+}
+@keyframes uiux_skill_bar4anim { /* Swift */
+	0% {width:0;}
+	100% {width:18vw;}
+}
+@keyframes uiux_skill_bar5anim { /* Java */
+	0% {width:0;}
+	100% {width:24vw;}
+}
+@keyframes uiux_skill_bar6anim { /* C++ */
+	0% {width:0;}
+	100% {width:23vw;}
+}
+@keyframes uiux_skill_bar7anim { /*  */
+	0% {width:0;}
+	100% {width:23vw;}
+}
+@keyframes uiux_skill_bar1animReverse {
+	0% {width:20vw;}
+	100% {width:0;}
+}
+@keyframes uiux_skill_bar2animReverse {
+	0% {width:26vw;}
+	100% {width:0;}
+}
+@keyframes uiux_skill_bar3animReverse {
+	0% {width:26vw;}
+	100% {width:0;}
+}
+@keyframes uiux_skill_bar4animReverse {
+	0% {width:18vw;}
+	100% {width:0;}
+}
+@keyframes uiux_skill_bar5animReverse {
+	0% {width:24vw;}
+	100% {width:0;}
+}
+@keyframes uiux_skill_bar6animReverse {
+	0% {width:23vw;}
+	100% {width:0;}
+}
+@keyframes uiux_skill_bar7animReverse {
+	0% {width:23vw;}
+	100% {width:0;}
+}
+
+
+.uiux_software_barAnim .bar1 {
+	-webkit-animation: uiux_software_bar1anim 1s forwards;
+	-moz-animation: uiux_software_bar1anim 1s forwards;
+	-ms-animation: uiux_software_bar1anim 1s forwards;
+	-o-animation: uiux_software_bar1anim 1s forwards;
+	animation: uiux_software_bar1anim 1s forwards;
+}
+.uiux_software_barAnim .bar2 {
+	-webkit-animation: uiux_software_bar2anim 1s forwards 0.25s;
+	-moz-animation: uiux_software_bar2anim 1s forwards 0.25s;
+	-ms-animation: uiux_software_bar2anim 1s forwards 0.25s;
+	-o-animation: uiux_software_bar2anim 1s forwards 0.25s;
+	animation: uiux_software_bar2anim 1s forwards 0.25s;
+}
+.uiux_software_barAnim .bar3 {
+	-webkit-animation: uiux_software_bar3anim 1s forwards 0.5s;
+	-moz-animation: uiux_software_bar3anim 1s forwards 0.5s;
+	-ms-animation: uiux_software_bar3anim 1s forwards 0.5s;
+	-o-animation: uiux_software_bar3anim 1s forwards 0.5s;
+	animation: uiux_software_bar3anim 1s forwards 0.5s;
+}
+.uiux_software_barAnim .bar4 {
+	-webkit-animation: uiux_software_bar4anim 1s forwards 0.75s;
+	-moz-animation: uiux_software_bar4anim 1s forwards 0.75s;
+	-ms-animation: uiux_software_bar4anim 1s forwards 0.75s;
+	-o-animation: uiux_software_bar4anim 1s forwards 0.75s;
+	animation: uiux_software_bar4anim 1s forwards 0.75s;
+}
+.uiux_software_barAnimReverse .bar1 {
+	-webkit-animation: uiux_software_bar1animReverse 0.5s forwards;
+	-moz-animation: uiux_software_bar1animReverse 0.5s forwards;
+	-ms-animation: uiux_software_bar1animReverse 0.5s forwards;
+	-o-animation: uiux_software_bar1animReverse 0.5s forwards;
+	animation: uiux_software_bar1animReverse 0.5s forwards;
+}
+.uiux_software_barAnimReverse .bar2 {
+	-webkit-animation: uiux_software_bar2animReverse 0.5s forwards;
+	-moz-animation: uiux_software_bar2animReverse 0.5s forwards;
+	-ms-animation: uiux_software_bar2animReverse 0.5s forwards;
+	-o-animation: uiux_software_bar2animReverse 0.5s forwards;
+	animation: uiux_software_bar2animReverse 0.5s forwards;
+}
+.uiux_software_barAnimReverse .bar3 {
+	-webkit-animation: uiux_software_bar3animReverse 0.5s forwards;
+	-moz-animation: uiux_software_bar3animReverse 0.5s forwards;
+	-ms-animation: uiux_software_bar3animReverse 0.5s forwards;
+	-o-animation: uiux_software_bar3animReverse 0.5s forwards;
+	animation: uiux_software_bar3animReverse 0.5s forwards;
+}
+.uiux_software_barAnimReverse .bar4 {
+	-webkit-animation: uiux_software_bar4animReverse 0.5s forwards;
+	-moz-animation: uiux_software_bar4animReverse 0.5s forwards;
+	-ms-animation: uiux_software_bar4animReverse 0.5s forwards;
+	-o-animation: uiux_software_bar4animReverse 0.5s forwards;
+	animation: uiux_software_bar4animReverse 0.5s forwards;
+}
+@keyframes uiux_software_bar1anim { /* Photoshop */
+	0% {width:0;}
+	100% {width:29vw;}
+}
+@keyframes uiux_software_bar2anim { /* Illustrator */
+	0% {width:0;}
+	100% {width:19vw;}
+}
+@keyframes uiux_software_bar3anim { /* After Effects */
+	0% {width:0;}
+	100% {width:26vw;}
+}
+@keyframes uiux_software_bar4anim { /* Cinema 4D */
+	0% {width:0;}
+	100% {width:23vw;}
+}
+@keyframes uiux_software_bar1animReverse {
+	0% {width:29vw;}
+	100% {width:0;}
+}
+@keyframes uiux_software_bar2animReverse {
+	0% {width:19vw;}
+	100% {width:0;}
+}
+@keyframes uiux_software_bar3animReverse {
+	0% {width:26vw;}
+	100% {width:0;}
+}
+@keyframes uiux_software_bar4animReverse {
+	0% {width:23vw;}
+	100% {width:0;}
+}
+
+
+
+
+/* ------------------
+-  Web Dev Content  -
+------------------- */
+
+.comp_content {
+	position:absolute;
+	top:0vh;
+	left:0vw;
+	opacity:0;
+	visibility:hidden;
+	font-family:"Avenir";
+}
+.comp_buttons {
+	position:absolute;
+	opacity:0;
+	visibility:hidden;
+	-webkit-transition: opacity 1s, visibility 1s;
+	-moz-transition: opacity 1s, visibility 1s;
+	-ms-transition: opacity 1s, visibility 1s;
+	-o-transition: opacity 1s, visibility 1s;
+	transition: opacity 1s, visibility 1s;
+}
+
+.comp_awards_button {
+	position:absolute;
+	top:25vh;
+	left:35vw;
+	width:200px;
+	height:50px;
+}
+.comp_awards_button:hover {
+	cursor:pointer;
+}
+.comp_awards_button:hover .comp_awards_innerButton {
+	
+}
+.comp_awards_button:hover .comp_awards_buttonText {
+	color:rgb(0, 255, 153) !important;
+}
+.comp_awards_innerButton, .comp_software_innerButton, .comp_exp_innerButton {
+	position:relative;
+	top:-50%;
+	left:-50%;
+	width:200px;
+	height:50px;
+	/*background-color:rgb(55,55,55);
+	border-radius:100%;
+	border:1px solid;
+	border-color:rgb(155,155,155);
+	-webkit-transition: background-color 0.5s, border-color 0.5s;
+	transition: background-color 0.5s, border-color 0.5s;*/
+}
+.comp_awards_buttonText, .comp_software_buttonText, .comp_exp_buttonText {
+	position:absolute;
+	width:200px;
+	height:50px;
+	line-height:50px;
+	font-family:"Avenir";
+	font-size:24px;
+	color:rgb(255,255,255);
+	text-align:center;
+	-webkit-transition: color 0.5s;
+	-moz-transition: color 0.5s;
+	-ms-transition: color 0.5s;
+	-o-transition: color 0.5s;
+	transition: color 0.5s;
+	pointer-events:none;
+}
+.comp_software_button {
+	position:absolute;
+	display:none;
+	top:25vh;
+	left:50vw;
+	width:200px;
+	height:50px;
+}
+.comp_software_button:hover {
+	cursor:pointer;
+}
+.comp_software_button:hover .comp_software_innerButton {
+	
+}
+.comp_software_button:hover .comp_software_buttonText {
+	color:rgb(0, 255, 153) !important;
+}
+.comp_exp_button {
+	position:absolute;
+	top:25vh;
+	left:65vw;
+	width:200px;
+	height:50px;
+}
+.comp_exp_button:hover {
+	cursor:pointer;
+}
+.comp_exp_button:hover .comp_exp_innerButton {
+	
+}
+.comp_exp_button:hover .comp_exp_buttonText {
+	color:rgb(0, 255, 153) !important;
+}
+
+.comp_awards {
+	position:absolute;
+	top:45vh;
+	left:50vw;
+	width:300px;
+}
+.comp_awards_box {
+	position:relative;
+	left:-50%;
+	width:100%;
+	height:100%;
+}
+.award1 {
+	position:absolute;
+	width:100%;
+	height:100%;
+	opacity:0;
+	top:-100px;
+}
+.award_text {
+	position:absolute;
+	width:100%;
+	height:100%;
+	text-align:center;
+	font-family:"Avenir";
+	font-size:16px;
+	color:rgba(255,255,255,0.75);
+	top:20vh;
+}
+.award1 img {
+	position:absolute;
+	top:0;
+	left:0;
+}
+.awardsAnim .award1 {
+	-webkit-animation: awardAnim 0.5s forwards;
+	-moz-animation: awardAnim 0.5s forwards;
+	-ms-animation: awardAnim 0.5s forwards;
+	-o-animation: awardAnim 0.5s forwards;
+	animation: awardAnim 0.5s forwards;
+}
+.awardsAnimReverse .award1 {
+	-webkit-animation: awardAnimReverse 0.5s forwards;
+	-moz-animation: awardAnimReverse 0.5s forwards;
+	-ms-animation: awardAnimReverse 0.5s forwards;
+	-o-animation: awardAnimReverse 0.5s forwards;
+	animation: awardAnimReverse 0.5s forwards;
+}
+@keyframes awardAnim {
+	0% {opacity:0; top:-100px;}
+	100% {opacity:1; top:0;}
+}
+@keyframes awardAnimReverse {
+	0% {opacity:1; top:0;}
+	100% {opacity:0; top:-100px;}
+}
+
+.comp_software {
+	position:absolute;
+	top:40vh;
+	left:28vw;
+}
+.comp_software_gridLines {
+	height:22vh;
+}
+
+.comp_exp {
+	position:absolute;
+	top:40vh;
+	left:50vw;
+	opacity:0;
+	visibility:hidden;
+}
+.comp_images_box {
+	position:relative;
+	left:-50%;
+	width:800px;
+	height:400px;
+}
+.twopinklines, .powertrials, .juxtaposition {
+	position:absolute;
+	width:50%;
+	height:50%;
+}
+.juxtaposition {
+	top:0;
+	left:0;
+}
+.twopinklines {
+	top:0;
+	left:50%;
+}
+.powertrials {
+	top:50%;
+	left:0;
+}
+.twopinklines img, .powertrials img, .juxtaposition img {
+	position:absolute;
+	left:0;
+	width:0;
+	height:100%;
+}
+.twopinklines_overlay, .powertrials_overlay, .juxtaposition_overlay {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color:rgba(0,0,0,0.5);
+	opacity:0;
+	z-index:1;
+	-webkit-transition: opacity 0.25s;
+	-moz-transition: opacity 0.25s;
+	-ms-transition: opacity 0.25s;
+	-o-transition: opacity 0.25s;
+	transition: opacity 0.25s;
+}
+.twopinklines_overlay_text, .powertrials_overlay_text, .juxtaposition_overlay_text {
+	position:absolute;
+	margin-top:-0.5em;
+	top:50%;
+	left:0;
+	width:100%;
+	height:100%;
+	text-align:center;
+	font-family:"Avenir";
+	font-size:14px;
+	color:rgba(255,255,255,1);
+	opacity:0;
+	z-index:2;
+	pointer-events:none;
+	-webkit-transition: opacity 0.25s;
+	-moz-transition: opacity 0.25s;
+	-ms-transition: opacity 0.25s;
+	-o-transition: opacity 0.25s;
+	transition: opacity 0.25s;
+}
+.twopinklines:hover .twopinklines_overlay, .powertrials:hover .powertrials_overlay, .juxtaposition:hover .juxtaposition_overlay {
+	opacity:1;
+}
+.twopinklines:hover .twopinklines_overlay_text, .powertrials:hover .powertrials_overlay_text, .juxtaposition:hover .juxtaposition_overlay_text {
+	opacity:1;
+}
+.expImagesAnim .juxtaposition img {
+	-webkit-animation: images_anim 0.5s forwards;
+	-moz-animation: images_anim 0.5s forwards;
+	-ms-animation: images_anim 0.5s forwards;
+	-o-animation: images_anim 0.5s forwards;
+	animation: images_anim 0.5s forwards;
+}
+.expImagesAnimReverse .juxtaposition img {
+	-webkit-animation: images_anim_reverse 0.25s forwards;
+	-moz-animation: images_anim_reverse 0.25s forwards;
+	-ms-animation: images_anim_reverse 0.25s forwards;
+	-o-animation: images_anim_reverse 0.25s forwards;
+	animation: images_anim_reverse 0.25s forwards;
+}
+.expImagesAnim .twopinklines img {
+	-webkit-animation: images_anim 0.5s forwards 0.1s;
+	-moz-animation: images_anim 0.5s forwards 0.1s;
+	-ms-animation: images_anim 0.5s forwards 0.1s;
+	-o-animation: images_anim 0.5s forwards 0.1s;
+	animation: images_anim 0.5s forwards 0.1s;
+}
+.expImagesAnimReverse .twopinklines img {
+	-webkit-animation: images_anim_reverse 0.25s forwards;
+	-moz-animation: images_anim_reverse 0.25s forwards;
+	-ms-animation: images_anim_reverse 0.25s forwards;
+	-o-animation: images_anim_reverse 0.25s forwards;
+	animation: images_anim_reverse 0.25s forwards;
+}
+.expImagesAnim .powertrials img {
+	-webkit-animation: images_anim 0.5s forwards 0.2s;
+	-moz-animation: images_anim 0.5s forwards 0.2s;
+	-ms-animation: images_anim 0.5s forwards 0.2s;
+	-o-animation: images_anim 0.5s forwards 0.2s;
+	animation: images_anim 0.5s forwards 0.2s;
+}
+.expImagesAnimReverse .powertrials img {
+	-webkit-animation: images_anim_reverse 0.25s forwards;
+	-moz-animation: images_anim_reverse 0.25s forwards;
+	-ms-animation: images_anim_reverse 0.25s forwards;
+	-o-animation: images_anim_reverse 0.25s forwards;
+	animation: images_anim_reverse 0.25s forwards;
+}
+
+
+.comp_software_barAnim .bar1 {
+	-webkit-animation: comp_software_bar1anim 1s forwards;
+	-moz-animation: comp_software_bar1anim 1s forwards;
+	-ms-animation: comp_software_bar1anim 1s forwards;
+	-o-animation: comp_software_bar1anim 1s forwards;
+	animation: comp_software_bar1anim 1s forwards;
+}
+.comp_software_barAnim .bar2 {
+	-webkit-animation: comp_software_bar2anim 1s forwards 0.25s;
+	-moz-animation: comp_software_bar2anim 1s forwards 0.25s;
+	-ms-animation: comp_software_bar2anim 1s forwards 0.25s;
+	-o-animation: comp_software_bar2anim 1s forwards 0.25s;
+	animation: comp_software_bar2anim 1s forwards 0.25s;
+}
+.comp_software_barAnim .bar3 {
+	-webkit-animation: comp_software_bar3anim 1s forwards 0.5s;
+	-moz-animation: comp_software_bar3anim 1s forwards 0.5s;
+	-ms-animation: comp_software_bar3anim 1s forwards 0.5s;
+	-o-animation: comp_software_bar3anim 1s forwards 0.5s;
+	animation: comp_software_bar3anim 1s forwards 0.5s;
+}
+.comp_software_barAnimReverse .bar1 {
+	-webkit-animation: comp_software_bar1animReverse 0.5s forwards;
+	-moz-animation: comp_software_bar1animReverse 0.5s forwards;
+	-ms-animation: comp_software_bar1animReverse 0.5s forwards;
+	-o-animation: comp_software_bar1animReverse 0.5s forwards;
+	animation: comp_software_bar1animReverse 0.5s forwards;
+}
+.comp_software_barAnimReverse .bar2 {
+	-webkit-animation: comp_software_bar2animReverse 0.5s forwards;
+	-moz-animation: comp_software_bar2animReverse 0.5s forwards;
+	-ms-animation: comp_software_bar2animReverse 0.5s forwards;
+	-o-animation: comp_software_bar2animReverse 0.5s forwards;
+	animation: comp_software_bar2animReverse 0.5s forwards;
+}
+.comp_software_barAnimReverse .bar3 {
+	-webkit-animation: comp_software_bar3animReverse 0.5s forwards;
+	-moz-animation: comp_software_bar3animReverse 0.5s forwards;
+	-ms-animation: comp_software_bar3animReverse 0.5s forwards;
+	-o-animation: comp_software_bar3animReverse 0.5s forwards;
+	animation: comp_software_bar3animReverse 0.5s forwards;
+}
+@keyframes comp_software_bar1anim { /* Logic */
+	0% {width:0;}
+	100% {width:31vw;}
+}
+@keyframes comp_software_bar2anim { /* Pro Tools */
+	0% {width:0;}
+	100% {width:26vw;}
+}
+@keyframes comp_software_bar3anim { /* Digital Performer */
+	0% {width:0;}
+	100% {width:23vw;}
+}
+@keyframes comp_software_bar1animReverse {
+	0% {width:31vw;}
+	100% {width:0;}
+}
+@keyframes comp_software_bar2animReverse {
+	0% {width:26vw;}
+	100% {width:0;}
+}
+@keyframes comp_software_bar3animReverse {
+	0% {width:23vw;}
+	100% {width:0;}
+}
+
+
+
+/* ------------------------
+-  Left/Right/Up Animations  -
+------------------------- */
+
+
+@keyframes enterTitle {
+	0% {top:0%; opacity:0;}
+	100% {top:10%; opacity:1;}
+}
+@keyframes exitTitle {
+	0% {top:10%; opacity:1;}
+	100% {top:0%; opacity:0;}
+}
+@keyframes enterDiagonal {
+	0% {height:0vh; top:50vh;}
+	50% {height:30vh; top:35vh; transform:rotate(0deg);}
+	100% {height:30vh; top:35vh; transform:rotate(45deg);}
+}
+@keyframes enterUIUX {
+	0% {left:25vw; opacity:0;}
+	100% {left:40vw; opacity:1;}
+}
+@keyframes enterComp {
+	0% {left:75vw; opacity:0;}
+	100% {left:60vw; opacity:1;}
+}
+@keyframes aboutMeEnterAnim {
+	0% {top:95vh; opacity:0;}
+	100% {top:85vh; opacity:1;}
+}
+@keyframes aboutMeExitAnim {
+	0% {top:85vh; opacity:1;}
+	50% {top:85vh; opacity:1;}
+	100% {top:95vh; opacity:0;}
+}
+
+
+.uiuxUpTrans {
+	-webkit-animation: transUpUIUX 1s forwards 0s;
+	-moz-animation: transUpUIUX 1s forwards 0s;
+	-ms-animation: transUpUIUX 1s forwards 0s;
+	-o-animation: transUpUIUX 1s forwards 0s;
+	animation: transUpUIUX 1s forwards 0s;
+}
+.compUpTrans {
+	-webkit-animation: transUpComp 1s forwards 0s;
+	-moz-animation: transUpComp 1s forwards 0s;
+	-ms-animation: transUpComp 1s forwards 0s;
+	-o-animation: transUpComp 1s forwards 0s;
+	animation: transUpComp 1s forwards 0s;
+}
+.diaUpTrans {
+	-webkit-animation: transUpDiagonal 1.5s forwards 0s;
+	-moz-animation: transUpDiagonal 1.5s forwards 0s;
+	-ms-animation: transUpDiagonal 1.5s forwards 0s;
+	-o-animation: transUpDiagonal 1.5s forwards 0s;
+	animation: transUpDiagonal 1.5s forwards 0s;
+}
+.uiuxUpReturn {
+	-webkit-animation: returnUpUIUX 1s forwards 0s;
+	-moz-animation: returnUpUIUX 1s forwards 0s;
+	-ms-animation: returnUpUIUX 1s forwards 0s;
+	-o-animation: returnUpUIUX 1s forwards 0s;
+	animation: returnUpUIUX 1s forwards 0s;
+}
+.compUpReturn {
+	-webkit-animation: returnUpComp 1s forwards 0s;
+	-moz-animation: returnUpComp 1s forwards 0s;
+	-ms-animation: returnUpComp 1s forwards 0s;
+	-o-animation: returnUpComp 1s forwards 0s;
+	animation: returnUpComp 1s forwards 0s;
+}
+.diaUpReturn {
+	-webkit-animation: returnUpDiagonal 1.5s forwards 0s;
+	-moz-animation: returnUpDiagonal 1.5s forwards 0s;
+	-ms-animation: returnUpDiagonal 1.5s forwards 0s;
+	-o-animation: returnUpDiagonal 1.5s forwards 0s;
+	animation: returnUpDiagonal 1.5s forwards 0s;
+}
+
+.uiuxLeftTrans {
+	-webkit-animation: transLeftUIUX 1.5s forwards 0s;
+	-moz-animation: transLeftUIUX 1.5s forwards 0s;
+	-ms-animation: transLeftUIUX 1.5s forwards 0s;
+	-o-animation: transLeftUIUX 1.5s forwards 0s;
+	animation: transLeftUIUX 1.5s forwards 0s;
+}
+.compLeftTrans {
+	-webkit-animation: transLeftComp 1s forwards 0s;
+	-moz-animation: transLeftComp 1s forwards 0s;
+	-ms-animation: transLeftComp 1s forwards 0s;
+	-o-animation: transLeftComp 1s forwards 0s;
+	animation: transLeftComp 1s forwards 0s;
+}
+.diaLeftTrans {
+	-webkit-animation: transLeftDiagonal 1.5s forwards 0s;
+	-moz-animation: transLeftDiagonal 1.5s forwards 0s;
+	-ms-animation: transLeftDiagonal 1.5s forwards 0s;
+	-o-animation: transLeftDiagonal 1.5s forwards 0s;
+	animation: transLeftDiagonal 1.5s forwards 0s;
+}
+.uiuxLeftReturn {
+	-webkit-animation: returnLeftUIUX 1.5s forwards 0s;
+	-moz-animation: returnLeftUIUX 1.5s forwards 0s;
+	-ms-animation: returnLeftUIUX 1.5s forwards 0s;
+	-o-animation: returnLeftUIUX 1.5s forwards 0s;
+	animation: returnLeftUIUX 1.5s forwards 0s;
+}
+.compLeftReturn {
+	-webkit-animation: returnLeftComp 1.5s forwards 0s;
+	-moz-animation: returnLeftComp 1.5s forwards 0s;
+	-ms-animation: returnLeftComp 1.5s forwards 0s;
+	-o-animation: returnLeftComp 1.5s forwards 0s;
+	animation: returnLeftComp 1.5s forwards 0s;
+}
+.diaLeftReturn {
+	-webkit-animation: returnLeftDiagonal 1.5s forwards 0s;
+	-moz-animation: returnLeftDiagonal 1.5s forwards 0s;
+	-ms-animation: returnLeftDiagonal 1.5s forwards 0s;
+	-o-animation: returnLeftDiagonal 1.5s forwards 0s;
+	animation: returnLeftDiagonal 1.5s forwards 0s;
+}
+
+.uiuxRightTrans {
+	-webkit-animation: transRightUIUX 1s forwards 0s;
+	-moz-animation: transRightUIUX 1s forwards 0s;
+	-ms-animation: transRightUIUX 1s forwards 0s;
+	-o-animation: transRightUIUX 1s forwards 0s;
+	animation: transRightUIUX 1s forwards 0s;
+}
+.compRightTrans {
+	-webkit-animation: transRightComp 1.5s forwards 0s;
+	-moz-animation: transRightComp 1.5s forwards 0s;
+	-ms-animation: transRightComp 1.5s forwards 0s;
+	-o-animation: transRightComp 1.5s forwards 0s;
+	animation: transRightComp 1.5s forwards 0s;
+}
+.diaRightTrans {
+	-webkit-animation: transRightDiagonal 1.5s forwards 0s;
+	-moz-animation: transRightDiagonal 1.5s forwards 0s;
+	-ms-animation: transRightDiagonal 1.5s forwards 0s;
+	-o-animation: transRightDiagonal 1.5s forwards 0s;
+	animation: transRightDiagonal 1.5s forwards 0s;
+}
+.uiuxRightReturn {
+	-webkit-animation: returnRightUIUX 1.5s forwards 0s;
+	-moz-animation: returnRightUIUX 1.5s forwards 0s;
+	-ms-animation: returnRightUIUX 1.5s forwards 0s;
+	-o-animation: returnRightUIUX 1.5s forwards 0s;
+	animation: returnRightUIUX 1.5s forwards 0s;
+}
+.compRightReturn {
+	-webkit-animation: returnRightComp 1.5s forwards 0s;
+	-moz-animation: returnRightComp 1.5s forwards 0s;
+	-ms-animation: returnRightComp 1.5s forwards 0s;
+	-o-animation: returnRightComp 1.5s forwards 0s;
+	animation: returnRightComp 1.5s forwards 0s;
+}
+.diaRightReturn {
+	-webkit-animation: returnRightDiagonal 1.5s forwards 0s;
+	-moz-animation: returnRightDiagonal 1.5s forwards 0s;
+	-ms-animation: returnRightDiagonal 1.5s forwards 0s;
+	-o-animation: returnRightDiagonal 1.5s forwards 0s;
+	animation: returnRightDiagonal 1.5s forwards 0s;
+}
+
+
+@keyframes transUpUIUX {
+	0% {top:45vh; left:40vw; opacity:1;}
+	50% {top:45vh; left:50vw; opacity:1;}
+	100% {top:5vh; left:50vw; opacity:0;}
+}
+@keyframes transUpComp {
+	0% {top:55vh; left:60vw; opacity:1;}
+	50% {top:55vh; left:50vw; opacity:1;}
+	100% {top:15vh; left:50vw; opacity:0;}
+}
+@keyframes transUpDiagonal {
+	0% {height:30vh; top:35vh; transform:rotate(45deg); left:50vw;}
+	33% {height:30vh; top:35vh; transform:rotate(90deg); left:50vw;}
+	66% {height:30vh; top:-5vh; transform:rotate(90deg); left:50vw;}
+	100% {height:0vh; top:10vh; transform:rotate(90deg); left:50vw;}
+}
+
+@keyframes returnUpUIUX {
+	0% {top:5vh; left:50vw; opacity:0;}
+	50% {top:45vh; left:50vw; opacity:1;}
+	100% {top:45vh; left:40vw; opacity:1;}
+}
+@keyframes returnUpComp {
+	0% {top:15vh; left:50vw; opacity:0;}
+	50% {top:55vh; left:50vw; opacity:1;}
+	100% {top:55vh; left:60vw; opacity:1;}
+}
+@keyframes returnUpDiagonal {
+	0% {height:0vh; top:10vh; transform:rotate(90deg); left:50vw;}
+	33% {height:30vh; top:-5vh; transform:rotate(90deg); left:50vw;}
+	66% {height:30vh; top:35vh; transform:rotate(90deg); left:50vw;}
+	100% {height:30vh; top:35vh; transform:rotate(45deg); left:50vw;}
+}
+
+@keyframes transLeftUIUX {
+	0% {top:45vh; left:40vw; opacity:1;}
+	33% {top:50vh; left:40vw; opacity:1;}
+	66% {top:50vh; left:50vw; opacity:1;}
+	100% {top:10vh; left:50vw; opacity:1;}
+}
+@keyframes transLeftComp {
+	0% {top:55vh; left:60vw; opacity:1;}
+	50% {top:50vh; left:60vw; opacity:1;}
+	90% {top:50vh; left:95vw; opacity:0;}
+	100% {top:50vh; left:95vw; opacity:0;}
+}
+@keyframes transLeftDiagonal {
+	0% {height:30vh; top:35vh; transform:rotate(45deg); left:50vw;}
+	33% {height:30vh; top:35vh; transform:rotate(0deg); left:50vw;}
+	66% {height:30vh; top:35vh; transform:rotate(0deg); left:95vw;}
+	100% {height:0vh; top:50vh; transform:rotate(0deg); left:95vw;}
+}
+
+@keyframes transRightUIUX {
+	0% {top:45vh; left:40vw; opacity:1;}
+	50% {top:50vh; left:40vw; opacity:1;}
+	90% {top:50vh; left:5vw; opacity:0;}
+	100% {top:50vh; left:5vw; opacity:0;}
+}
+@keyframes transRightComp {
+	0% {top:55vh; left:60vw; opacity:1;}
+	33% {top:50vh; left:60vw; opacity:1;}
+	66% {top:50vh; left:50vw; opacity:1;}
+	100% {top:10vh; left:50vw; opacity:1;}
+}
+@keyframes transRightDiagonal {
+	0% {height:30vh; top:35vh; transform:rotate(45deg); left:50vw;}
+	33% {height:30vh; top:35vh; transform:rotate(0deg); left:50vw;}
+	66% {height:30vh; top:35vh; transform:rotate(0deg); left:5vw;}
+	100% {height:0vh; top:50vh; transform:rotate(0deg); left:5vw;}
+}
+
+@keyframes returnLeftUIUX {
+	0% {top:10vh; left:50vw; opacity:1;}
+	33% {top:50vh; left:50vw; opacity:1;}
+	66% {top:50vh; left:40vw; opacity:1;}
+	100% {top:45vh; left:40vw; opacity:1;}
+}
+@keyframes returnLeftComp {
+	0% {top:50vh; left:95vw; opacity:0;}
+	33% {top:50vh; left:95vw; opacity:0;}
+	66% {top:50vh; left:60vw; opacity:1;}
+	100% {top:55vh; left:60vw; opacity:1;}
+}
+@keyframes returnLeftDiagonal {
+	0% {height:0vh; top:50vh; transform:rotate(0deg); left:95vw;}
+	33% {height:30vh; top:35vh; transform:rotate(0deg); left:95vw;}
+	66% {height:30vh; top:35vh; transform:rotate(0deg); left:50vw;}
+	100% {height:30vh; top:35vh; transform:rotate(45deg); left:50vw;}
+}
+
+@keyframes returnRightUIUX {
+	0% {top:50vh; left:5vw; opacity:0;}
+	33% {top:50vh; left:5vw; opacity:0;}
+	66% {top:50vh; left:40vw; opacity:1;}
+	100% {top:45vh; left:40vw; opacity:1;}
+}
+@keyframes returnRightComp {
+	0% {top:10vh; left:50vw; opacity:1;}
+	33% {top:50vh; left:50vw; opacity:1;}
+	66% {top:50vh; left:60vw; opacity:1;}
+	100% {top:55vh; left:60vw; opacity:1;}
+}
+@keyframes returnRightDiagonal {
+	0% {height:0vh; top:50vh; transform:rotate(0deg); left:5vw;}
+	33% {height:30vh; top:35vh; transform:rotate(0deg); left:5vw;}
+	66% {height:30vh; top:35vh; transform:rotate(0deg); left:50vw;}
+	100% {height:30vh; top:35vh; transform:rotate(45deg); left:50vw;}
+}
+
+
+/*  Mobile styles  */
+@media screen and (max-width: 720px) {
+	.socialIcons {
+		top:5vh;
+		left:10vw;
+		width:40vw;
+		height:10vh;
+	}
+	.twitter_box {
+		left:0vw;
+	}
+	.behance_box {
+		left:15vw;
+	}
+	.soundcloud_box {
+		left:30vw;
+	}
+	.seeMoreBox, .listenBox {
+		top:6vh;
+	}
+	.contactButtonBox {
+		top:4vh;
+		left:72.5vw;
+	}
+	.title {
+		top:5vh;
+	}
+	.uiux {
+		left:-90%;
+	}
+	.comp {
+		left:-10%;
+	}
+	.paragraph1 {
+		left:15vw;
+		top:70vh;
+	}
+	.portraitFrame {
+		left:50vw;
+		top:30vh;
+	}
+	.cycleTextBox {
+		left:50vw;
+		top:55vh;
+	}
+	.returnX {
+		left:80vw;
+		top:10vh;
+	}
+	.contactModalContent {
+		top:15vh;
+		left:15vw;
+		height:70vh;
+		width:70vw;
+    }
+    .contactClose {
+		top:-10vh;
+		left:65vw;
+	}
+	.columns {
+		font-size:10px;
+	}
+	.column2 {
+		left:15vw;
+	}
+	.column3 {
+		left:30vw;
+	}
+	.column4 {
+		left:45vw;
+	}
+	.rows {
+		left:-45vw;
+		width:50vw;
+		font-size:14px;
+	}
+	.gridLine2 {
+		left:15vw;
+	}
+	.gridLine3 {
+		left:30vw;
+	}
+	.gridLine4 {
+		left:45vw;
+	}
+	@keyframes uiux_skill_bar1anim { /* HTML */
+		0% {width:0;} 100% {width:30vw;}
+	}
+	@keyframes uiux_skill_bar2anim { /* CSS */
+		0% {width:0;} 100% {width:39vw;}
+	}
+	@keyframes uiux_skill_bar3anim { /* Javascript */
+		0% {width:0;} 100% {width:39vw;}
+	}
+	@keyframes uiux_skill_bar4anim { /* Swift */
+		0% {width:0;} 100% {width:27vw;}
+	}
+	@keyframes uiux_skill_bar5anim { /* Java */
+		0% {width:0;} 100% {width:36vw;}
+	}
+	@keyframes uiux_skill_bar6anim { /* C++ */
+		0% {width:0;} 100% {width:34.5vw;}
+	}
+	@keyframes uiux_skill_bar7anim { /*  */
+		0% {width:0;} 100% {width:34.5vw;}
+	}
+	@keyframes uiux_skill_bar1animReverse {
+		0% {width:30vw;} 100% {width:0;}
+	}
+	@keyframes uiux_skill_bar2animReverse {
+		0% {width:39vw;} 100% {width:0;}
+	}
+	@keyframes uiux_skill_bar3animReverse {
+		0% {width:39vw;} 100% {width:0;}
+	}
+	@keyframes uiux_skill_bar4animReverse {
+		0% {width:27vw;} 100% {width:0;}
+	}
+	@keyframes uiux_skill_bar5animReverse {
+		0% {width:36vw;} 100% {width:0;}
+	}
+	@keyframes uiux_skill_bar6animReverse {
+		0% {width:34.5vw;} 100% {width:0;}
+	}
+	@keyframes uiux_skill_bar7animReverse {
+		0% {width:34.5vw;} 100% {width:0;}
+	}
+	@keyframes uiux_software_bar1anim { /* Photoshop */
+		0% {width:0;} 100% {width:43.5vw;}
+	}
+	@keyframes uiux_software_bar2anim { /* Illustrator */
+		0% {width:0;} 100% {width:28.5vw;}
+	}
+	@keyframes uiux_software_bar3anim { /* After Effects */
+		0% {width:0;} 100% {width:39vw;}
+	}
+	@keyframes uiux_software_bar4anim { /* Cinema 4D */
+		0% {width:0;} 100% {width:34.5vw;}
+	}
+	@keyframes uiux_software_bar1animReverse {
+		0% {width:43.5vw;} 100% {width:0;}
+	}
+	@keyframes uiux_software_bar2animReverse {
+		0% {width:28.5vw;} 100% {width:0;}
+	}
+	@keyframes uiux_software_bar3animReverse {
+		0% {width:39vw;} 100% {width:0;}
+	}
+	@keyframes uiux_software_bar4animReverse {
+		0% {width:34.5vw;} 100% {width:0;}
+	}
+	.uiux_skills_buttonText, .uiux_software_buttonText, .uiux_exp_buttonText,
+	.comp_awards_buttonText, .comp_software_buttonText, .comp_exp_buttonText {
+		font-size:20px;
+	}
+	.uiux_skills_button {
+		left:15vw;
+	}
+	.uiux_exp_button {
+		left:85vw;
+	}
+	.comp_awards_button {
+		left:25vw;
+	}
+	.comp_exp_button {
+		left:75vw;
+	}
+	.exp_images_box {
+		width:400px;
+		height:400px;
+	}
+	.mysite, .moodmusic  {
+		width:100%;
+		height:50%;
+		left:0;
+	}
+	.moodmusic {
+		top:50%;
+	}
+	.comp_images_box {
+		width:400px;
+		height:600px;
+	}
+	.twopinklines, .powertrials, .juxtaposition {
+		width:100%;
+		height:33.33%;
+		left:0;
+	}
+	.juxtaposition {
+		top:0;
+	}
+	.twopinklines {
+		top:33.33%;
+	}
+	.powertrials {
+		top:66.67%;
+	}
+}
+
+</style>
+
+<body>
+
+<div class="homeBG"></div>
+<div class="bgLeft" id="bgL"></div>
+<div class="bgRight" id="bgR"></div>
+
+<div class="titleBox" id="name">
+	<span class="title"><h1>James Vargo</h1></span>
+</div>
+<div class="subtitleBox" id="subName">
+	<span class="subtitle"><p></p></span>
+</div>
+
+<div class="uiux_underline" id="uiuxUnderline"></div>
+<div class="comp_underline" id="compUnderline"></div>
+<div class="diagonal" id="dia"></div>
+
+<div id="uiuxB" class="uiuxBox">
+	<span id="theUIUX" class="uiux" onmouseover="enterUIUXUnderline()" onmouseout="exitUIUXUnderline()" onclick="animateLeft()"><h3>UI/UX Designer</h3></span>
+</div>
+<div id="compB" class="compBox">
+	<span id="theComp" class="comp" onmouseover="enterCompUnderline()" onmouseout="exitCompUnderline()" onclick="animateRight()"><h3>Film Composer</h3></span>
+</div>
+
+<div class="socialIcons" id="icons">
+	<a href="http://twitter.com/JimmyVargo"><div class="twitter_box" id="twitter">
+		<svg version="1.1" id="twitter_logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			viewBox="0 0 256 256" style="enable-background:new 0 0 256 256;" xml:space="preserve">
+		<path class="twitter" d="M165.2,41.5c2.6,0,5.2,0,7.9,0c0.2,0.1,0.3,0.2,0.5,0.2c10.6,1.1,19.6,5.4,27,13c0.5,0.5,1,0.6,1.7,0.4
+			c9-1.9,17.6-5.2,25.6-9.7c0.3-0.2,0.6-0.3,0.9-0.5c-3.2,10.3-9.5,18.1-18.5,24c4.2-0.7,8.3-1.4,12.4-2.6c4.1-1.1,8-2.6,12-4
+			c0-0.1,0,0,0,0c-0.3,0.4-0.5,0.8-0.8,1.2c-5.5,7.9-12.2,14.8-20,20.5c-0.7,0.5-0.9,1-0.8,1.8c0.4,10.4-0.5,20.8-2.9,30.9
+			c-5.7,25.1-17.6,46.8-36.1,64.8c-8.3,8.1-17.7,14.8-28.1,20.1c-17.1,8.7-35.3,12.8-54.4,13.3c-7.3,0.2-14.7-0.3-21.9-1.4
+			c-16.9-2.6-32.7-8.5-47.2-17.6c-0.2-0.2-0.5-0.3-0.7-0.5c11.5,1.1,22.8,0.3,33.9-2.8c11.1-3.1,21.2-8.2,30.5-15.4
+			c-9.6-0.3-17.9-3.2-25.3-8.8c-7.4-5.5-12.5-12.7-15.5-21.7c6.6,1.2,13,1,19.2-0.7c-24.6-5.6-35.5-28.4-34.4-43.2
+			c3.1,1.1,6.1,2.4,9.3,3.5c3.2,1,6.5,1.5,9.8,1.5C40.1,101,34,92.3,31.5,81.1C29,70,30.7,59.5,36.3,49.5
+			C60,77.4,89.9,92.7,126.5,95.3c-0.1-0.5-0.1-0.9-0.2-1.2c-1.1-5.5-1.2-11-0.2-16.5c3.3-18.2,17.1-32,35.3-35.5
+			C162.6,41.9,163.9,41.7,165.2,41.5z"/>
+		</svg>
+	</div></a>
+	<a href="http://dribbble.com/jvargeaux"><div class="behance_box" id="behance">
+		<svg version="1.1" id="behance_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			 viewBox="0 0 256 256" style="enable-background:new 0 0 256 256;" xml:space="preserve">
+			<path class="behance" d="M10.4,100c0-16.2,4-31.2,12-45c8-13.7,18.9-24.6,32.6-32.6c13.7-8,28.7-12,45-12c16.2,0,31.2,4,45,12
+				c13.7,8,24.6,18.9,32.6,32.6c8,13.7,12,28.7,12,45s-4,31.2-12,45c-8,13.7-18.9,24.6-32.6,32.6c-13.7,8-28.7,12-45,12
+				c-16.2,0-31.2-4-45-12c-13.7-8-24.6-18.9-32.6-32.6C14.4,131.2,10.4,116.2,10.4,100z M25.3,100c0,18.6,6.3,35.1,18.8,49.3
+				c5.7-11.2,14.8-21.9,27.2-32.1C83.8,107,95.9,100.7,107.7,98c-1.8-4.2-3.5-7.9-5.2-11.3c-20.5,6.6-42.8,9.9-66.6,9.9
+				c-4.7,0-8.1-0.1-10.4-0.2c0,0.5,0,1.1-0.1,1.8C25.3,98.9,25.3,99.5,25.3,100z M27.6,81.5c2.6,0.2,6.5,0.4,11.6,0.4
+				c19.9,0,38.9-2.7,56.8-8.1C87,57.7,77,44.3,66.1,33.5c-9.4,4.8-17.5,11.4-24.3,19.9C35.1,61.9,30.4,71.3,27.6,81.5z M54.3,158.9
+				c13.5,10.5,28.7,15.8,45.7,15.8c8.8,0,17.6-1.7,26.3-5c-2.4-20.4-7-40.2-14-59.3c-11,2.4-22.1,8.4-33.2,18.1
+				C68,138.2,59.7,148.3,54.3,158.9z M81.7,27.8c10.5,10.9,20.2,24.4,29.2,40.7c16.2-6.8,28.5-15.5,36.7-26
+				C133.8,31,117.9,25.3,100,25.3C93.9,25.3,87.8,26.1,81.7,27.8z M117.4,81.2c1.8,3.8,3.8,8.7,6.1,14.5c8.8-0.8,18.5-1.3,28.8-1.3
+				c7.4,0,14.8,0.2,22,0.5c-1-16.2-6.8-30.7-17.6-43.4C149,63.2,135.9,73.1,117.4,81.2z M127.9,108.2c6.1,17.7,10.2,35.8,12.4,54.5
+				c9.4-6.1,17.1-13.9,23.1-23.5c6-9.6,9.6-19.9,10.7-31c-8.7-0.6-16.7-0.9-23.8-0.9C143.8,107.3,136.3,107.6,127.9,108.2z"/>
+		</svg>
+	</div></a>
+	<a href="http://soundcloud.com/jvargomusic"><div class="soundcloud_box" id="soundcloud">
+		<svg version="1.1" id="soundcloud_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 		viewBox="0 0 256 256" style="enable-background:new 0 0 256 256;" xml:space="preserve">
+		<g>
+			<path class="soundcloud" d="M160.2,73.5c1.3,0.2,2.7,0.4,4,0.6c11,1.6,20.5,6.1,28.8,13.5c5.5,5,9.9,10.8,13,17.6
+				c2.5,5.5,4.2,11.3,4.7,17.4c0,0.2,0,0.3,0.1,0.5c1.2-0.4,2.4-0.8,3.6-1.2c17.3-4.8,35,6,38.6,23.6c1.2,5.9,0.8,11.7-1.5,17.2
+				c-4.5,10.9-12.6,17.4-24.2,19.4c-1.6,0.3-3.2,0.3-4.8,0.3c-28.3,0-56.6,0-84.8,0c-2.5,0-4-1.5-4-4c0-32.4,0-64.9,0-97.3
+				c0-1.9,0.8-3.1,2.6-3.8c5-2,10.2-3.2,15.5-3.7c0.3,0,0.5-0.1,0.8-0.2C155.1,73.5,157.7,73.5,160.2,73.5z"/>
+			<path class="soundcloud" d="M2.3,152.6c0.3-1.6,0.5-3.2,0.8-4.8c0.4-2.6,0.7-5.2,1-7.9c0.1-0.6,0.3-1.2,1-1.2c0.7,0,1,0.6,1.1,1.2
+				c0.7,4.5,1.5,8.9,2,13.4c0.2,1.3-0.3,2.7-0.5,4.1c-0.5,3.2-1,6.5-1.6,9.7c-0.1,0.5-0.5,1.1-0.9,1.2c-0.8,0.3-1.1-0.4-1.2-1.1
+				c-0.4-3.1-0.8-6.2-1.2-9.2c-0.1-1-0.4-2.1-0.6-3.1C2.3,154.1,2.3,153.3,2.3,152.6z"/>
+			<path class="soundcloud" d="M123.3,118.2c0.1-7.9,0.2-15.8,0.3-23.8c0.1-3.3,0.2-6.7,0.3-10c0.1-1.9,0.9-3.1,2.4-3.6
+				c2.1-0.7,4.3,0.9,4.3,3.2c0.1,4.6,0.1,9.3,0.2,13.9c0.2,8.2,0.4,16.5,0.7,24.7c0.1,3.8,0.2,7.7,0.3,11.5c0.1,5.7,0.4,11.4,0.3,17.1
+				c0,4.3-0.3,8.6-0.5,12.9c-0.3,4.9-0.6,9.8-0.9,14.7c-0.1,2-1.4,3.3-3.2,3.4c-1.9,0.1-3.4-1.2-3.5-3.2c-0.3-4.2-0.5-8.4-0.7-12.6
+				c-0.2-4.1-0.6-8.3-0.7-12.4c-0.1-3.9,0.1-7.7,0.2-11.6c0-0.2,0-0.4,0-0.6C123,134,123.1,126.1,123.3,118.2
+				C123.3,118.2,123.3,118.2,123.3,118.2z"/>
+			<path class="soundcloud" d="M112.8,134.5c0.2-8.7,0.3-17.4,0.5-26.1c0.1-6.2,0.2-12.3,0.4-18.5c0-1.8,1.4-3.2,3.1-3.3
+				c1.8,0,3.2,1.4,3.2,3.3c0.1,4.5,0.2,9,0.3,13.5c0.3,14.2,0.6,28.5,0.9,42.7c0,1.5-0.1,2.9,0,4.4c0.3,9.6-0.8,19.1-1.1,28.7
+				c-0.1,1.9-1.5,3.2-3.3,3.2c-1.7-0.1-3-1.4-3.1-3.3c-0.4-7.7-0.9-15.4-1.1-23.1c-0.2-7.2,0-14.3,0-21.5
+				C112.6,134.5,112.7,134.5,112.8,134.5z"/>
+			<path class="soundcloud" d="M109.7,117.5c0.2,7.7,0.3,13.1,0.5,18.6c0.1,5.3,0.5,10.6,0.4,15.9c0,4.8-0.4,9.7-0.7,14.5
+				c-0.2,3.5-0.4,7.1-0.6,10.6c-0.1,0.9-0.1,1.8-0.2,2.6c-0.2,1.6-1.4,2.7-2.9,2.7c-1.5,0-2.9-1.2-3-2.8c-0.1-2.2-0.2-4.4-0.4-6.6
+				c-0.3-6.3-0.7-12.5-0.9-18.8c-0.1-3.5,0.1-7.1,0.2-10.6c0-0.6,0-1.1,0.1-1.7c0.3-13.9,0.7-27.8,1-41.7c0-1.8,1.2-3.1,2.9-3.2
+				c1.7,0,2.9,1.2,3,3.1C109.4,106.7,109.6,113.2,109.7,117.5z"/>
+			<path class="soundcloud" d="M99,117.8c0.2,6.4,0.4,12.8,0.6,19.2c0.1,4.6,0.4,9.3,0.4,13.9c0,3.4-0.2,6.9-0.4,10.3
+				c-0.1,2.4-0.3,4.8-0.5,7.2c-0.2,3.6-0.4,7.2-0.7,10.8c0,0.4-0.1,0.7-0.2,1.1c-0.3,1.3-1.4,2.2-2.7,2.1c-1.3,0-2.4-0.9-2.6-2.2
+				c-0.2-1.5-0.2-3-0.3-4.5c-0.4-7.1-0.9-14.2-1.2-21.4c-0.1-3.8,0.1-7.6,0.2-11.4c0-0.6,0-1.1,0.1-1.7c0.4-14,0.7-28.1,1.1-42.1
+				c0-0.6,0-1.1,0.1-1.7c0.2-1.3,1.3-2.2,2.6-2.2c1.2,0,2.4,0.9,2.6,2.1c0.1,0.5,0.1,1.1,0.2,1.7C98.7,105.3,98.8,111.5,99,117.8
+				C99,117.8,99,117.8,99,117.8z"/>
+			<path class="soundcloud" d="M81.6,139.3c0.1-4.7,0.2-9.4,0.3-14.1c0.3-9.4,0.6-18.8,0.8-28.1c0.1-1.8,0.9-2.8,2.3-2.9
+				c1.5-0.1,2.7,0.9,2.7,2.4c0.1,2.7,0.2,5.5,0.3,8.2c0.2,5.7,0.3,11.4,0.5,17.1c0.3,10.4,0.7,20.8,1,31.2c0,1.7-0.3,3.5-0.4,5.2
+				c-0.1,1.6-0.1,3.2-0.2,4.8c-0.2,2.8-0.4,5.7-0.6,8.5c-0.2,2.8-0.4,5.6-0.6,8.4c-0.1,1.5-1.1,2.5-2.5,2.5c-1.4,0-2.4-1-2.6-2.5
+				c-0.1-1.2-0.2-2.3-0.3-3.5c-0.3-4.9-0.4-9.8-0.8-14.7C80.9,154.2,81.4,146.7,81.6,139.3z"/>
+			<path class="soundcloud" d="M71.3,140.2c0.1-4.7,0.2-9.4,0.3-14.1c0.3-9.1,0.6-18.2,0.9-27.4c0.1-1.5,1-2.5,2.3-2.6c1.3,0,2.3,0.9,2.4,2.5
+				c0.1,2.2,0.2,4.4,0.3,6.7c0.2,6.8,0.4,13.6,0.7,20.4c0.3,9.1,0.7,18.2,0.9,27.3c0.1,2.4-0.4,4.9-0.6,7.3c-0.1,1.4-0.1,2.7-0.2,4.1
+				c-0.1,2.4-0.3,4.9-0.5,7.3c-0.2,2.5-0.4,5-0.5,7.4c0,0.4-0.1,0.8-0.1,1.2c-0.2,1.3-1.1,2.1-2.4,2c-1.2,0-2.1-0.9-2.2-2.2
+				c-0.2-2.7-0.4-5.4-0.6-8.1c-0.4-5.8-0.9-11.6-1.1-17.4c-0.1-3.3,0.1-6.7,0.2-10c0-1.5,0-2.9,0-4.4
+				C71.2,140.2,71.2,140.2,71.3,140.2z"/>
+			<path class="soundcloud" d="M68,133.5c0.1,5.1,0.3,10.2,0.4,15.3c0,1.2,0.3,2.4,0.2,3.6c-0.2,3.6-0.5,7.2-0.8,10.8c-0.1,1-0.1,2-0.2,3
+				c-0.3,4.8-0.6,9.5-1,14.3c-0.1,1.1-1,2-2.1,2c-1,0-1.9-0.8-2-1.9c-0.2-2.3-0.4-4.6-0.5-6.9c-0.5-6.5-1-12.9-1.3-19.4
+				c-0.1-2.7,0.1-5.5,0.2-8.2c0.1-2,0.2-3.9,0.2-5.9c0.3-8.6,0.5-17.2,0.8-25.8c0.1-3.8,0.3-7.5,0.5-11.3c0.1-1.9,1.4-2.9,2.9-2.3
+				c0.9,0.4,1.3,1.1,1.3,2c0.1,4.2,0.2,8.3,0.4,12.5c0.2,4.5,0.5,9,0.7,13.5c0.1,1.6,0,3.2,0,4.8C67.9,133.5,68,133.5,68,133.5z"/>
+			<path class="soundcloud" d="M50.6,153c0.5-10.8,1.1-21.6,1.6-32.3c0.1-2.8,0.3-5.6,0.4-8.3c0.1-1.2,0.8-2,1.8-2c1.1,0,1.9,0.8,1.9,2.1
+				c0.5,8.7,0.9,17.4,1.4,26.2c0.2,3.7,0.3,7.3,0.6,11c0.3,4.5-0.2,8.9-0.5,13.4c-0.1,1.7-0.3,3.4-0.4,5c-0.4,4.2-0.7,8.4-1.1,12.7
+				c-0.1,1.1-0.8,1.8-1.8,1.8c-1.1,0-1.8-0.6-1.9-1.8c-0.3-2.9-0.5-5.9-0.7-8.8c-0.4-5.8-0.8-11.6-1.2-17.4
+				C50.6,153.9,50.6,153.4,50.6,153C50.6,153,50.6,153,50.6,153z"/>
+			<path class="soundcloud" d="M40.5,153.9c0.3-3.2,0.5-6.2,0.7-9.3c0.4-5.3,0.9-10.6,1.3-15.8c0-0.3,0-0.6,0.1-0.9c0.2-0.9,0.7-1.4,1.7-1.4
+				c0.9,0,1.5,0.5,1.6,1.4c0.2,1.6,0.4,3.2,0.5,4.8c0.6,6.7,1.3,13.4,1.8,20.1c0.1,1.5-0.2,3-0.4,4.5c-0.1,1.2-0.1,2.5-0.2,3.7
+				c-0.5,6.3-1.1,12.6-1.6,18.9c0,0.3-0.1,0.5-0.1,0.8c-0.2,0.9-0.7,1.4-1.6,1.4c-0.9,0-1.5-0.5-1.7-1.5c-0.1-0.8-0.2-1.7-0.2-2.5
+				c-0.5-6.3-1-12.7-1.4-19C40.8,157.4,40.6,155.6,40.5,153.9z"/>
+			<path class="soundcloud" d="M38.2,153.9c-0.2,1.4-0.4,3-0.6,4.6c-0.2,1.9-0.2,3.9-0.4,5.8c-0.5,5.2-1,10.5-1.5,15.7
+				c-0.1,1.2-0.7,1.8-1.6,1.7c-0.9-0.1-1.3-0.7-1.4-1.9c-0.5-5.7-0.9-11.5-1.4-17.2c-0.2-2.8-0.6-5.6-0.7-8.5
+				c-0.1-2.2,0.2-4.4,0.4-6.6c0.4-5.3,0.9-10.6,1.3-15.9c0.1-1.8,0.3-3.5,0.4-5.3c0.1-1,0.7-1.6,1.5-1.6c0.8,0,1.3,0.5,1.4,1.5
+				c0.4,3.9,0.8,7.8,1.1,11.7c0.5,4.9,0.9,9.8,1.4,14.8C38.2,153,38.2,153.3,38.2,153.9z"/>
+			<path class="soundcloud" d="M20.7,153.5c0.4-4.3,0.7-8.5,1.1-12.8c0.4-4.1,0.7-8.3,1.1-12.4c0-0.5,0.1-0.9,0.1-1.4
+				c0.1-0.7,0.4-1.2,1.2-1.2c0.8,0,1.2,0.5,1.3,1.3c0.2,1.5,0.3,3.1,0.5,4.6c0.7,7.1,1.5,14.2,2.1,21.3c0.2,1.8-0.2,3.7-0.4,5.6
+				c-0.6,6.1-1.3,12.2-1.9,18.2c-0.1,0.9-0.2,1.9-0.3,2.8c-0.1,0.7-0.5,1.3-1.3,1.2c-0.8,0-1.2-0.5-1.2-1.3c-0.3-3.1-0.6-6.2-0.9-9.4
+				c-0.5-5.1-0.9-10.2-1.4-15.2C20.7,154.4,20.7,153.9,20.7,153.5z"/>
+			<path class="soundcloud" d="M18.3,153.7c-0.3,2.3-0.6,4.6-0.9,6.9c-0.6,5-1.3,9.9-1.9,14.9c-0.1,0.7-0.3,1.3-1.1,1.3c-0.8,0-1-0.7-1-1.3
+				c-0.7-6.6-1.4-13.3-2.2-19.9c-0.3-2.8,0.3-5.5,0.5-8.2c0.5-5.1,1.1-10.3,1.7-15.4c0.1-0.8,0.1-1.7,1.1-1.8c1.1-0.1,1.1,1,1.2,1.7
+				c0.8,6.6,1.6,13.2,2.4,19.8C18.1,152.3,18.2,152.9,18.3,153.7z"/>
+		</g>
+		</svg>
+	</div></a>
+</div>
+
+
+<div class="seeMoreBox" id="seeMore">
+	<span class="seeMoreText">See More:</span>
+</div>
+<div class="listenBox" id="listen">
+	<span class="listenText">Listen:</span>
+</div>
+
+<div class="aboutMeBox" id="meBox" onclick="animateUp()">
+	<span class="aboutMe"><p>about me</p></span>
+</div>
+
+<div class="returnX" id="X">
+	<div class="innerX" id="inX" onclick="Xclick()">
+		<div class="returnX1"></div>
+		<div class="returnX2"></div>
+	</div>
+</div>
+
+<div class="contactButtonBox" id="contactBox" onclick="contactClicked()">
+	<span class="contactButtonText">contact</span>
+</div>
+
+<div class="contactModal" id="modalWindow">
+	<div class="contactModalContent" id="modalContent">
+		<form id ="contactForm" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="post">
+		<div class="contactClose" onclick="closeModal()">
+			<div class="contactCloseX1"></div>
+			<div class="contactCloseX2"></div>
+		</div>
+		<span class="contactName">Name:</span>
+		<input class="contactInput inputName" id="sendName" name="name"  placeholder="Name" value=""></input>
+		<span class="contactEmail">Email Address:</span>
+		<input class="contactInput inputEmail" id="sendEmail" name="email"  placeholder="Email Address" value=""></input>
+		<span class="contactMessage">Message:</span>
+		<textarea class="contactInput inputMessage" id="sendMessage" name="message"  placeholder="Message" value=""></textarea>
+		<div class="contactSendBox" onclick="sendMessage()">
+			<span class="contactSend" id="contactSendText">SEND</span>
+		</div>
+		<span class="errorDisplay" id="contactDisplay"><p></p></span>
+		</form>
+	</div>
+</div>
+
+
+<!--  About Me  !-->
+
+<div class="portraitFrame" id="picFrame">
+	<div class="portrait" id="pic"></div>
+</div>
+<div class="cycleTextBox" id="cyclingTextBox">
+	<span class="cycleText" id="cycleText1">computer geek.</span>
+	<span class="cycleText" id="cycleText2">digital artist.</span>
+	<span class="cycleText" id="cycleText3">coffee addict.</span>
+	<span class="cycleText" id="cycleText4">choir nerd.</span>
+	<span class="cycleTextLong" id="cycleText5">UI/UX designer.</span>
+	<span class="cycleTextLong" id="cycleText6">film composer.</span>
+</div>
+<div class="paragraph1" id="passZone"></div>
+<div class="paragraph1" id="paragraph1"></div>
+<div class="paragraph2" id="paragraph2"></div>
+<div class="paragraph3" id="paragraph3"></div>
+
+
+<!--  UIUX  !-->
+
+<div class="uiux_buttons" id="buttonsLeft">
+	<div class="uiux_skills_button" id="uiux_skillsButton" onclick="uiux_skillsClick()">
+		<div class="uiux_skills_innerButton">
+			<span class="uiux_skills_buttonText" id="uiux_skillsButtonText">Coding Skills</span>
+		</div>
+	</div>
+	<div class="uiux_software_button" id="uiux_softwareButton" onclick="uiux_softwareClick()">
+		<div class="uiux_software_innerButton">
+			<span class="uiux_software_buttonText" id="uiux_softwareButtonText">Software</span>
+		</div>
+	</div>
+	<div class="uiux_exp_button" id="uiux_expButton" onclick="uiux_expClick()">
+		<div class="uiux_exp_innerButton">
+			<span class="uiux_exp_buttonText" id="uiux_expButtonText">Experience</span>
+		</div>
+	</div>
+</div>
+<div class="uiux_content" id="contentLeft">
+	<div class="uiux_skills">
+		<div class="grid" id="uiux_skillGrid">
+			<div class="gridLine1 uiux_skills_gridLines"></div>
+			<div class="gridLine2 uiux_skills_gridLines"></div>
+			<div class="gridLine3 uiux_skills_gridLines"></div>
+			<div class="gridLine4 uiux_skills_gridLines"></div>
+		</div>
+		<div class="columns" id="uiux_skillColumns">
+			<span class="column1">Beginner</span>
+			<span class="column2">Intermediate</span>
+			<span class="column3">Advanced</span>
+			<span class="column4">Expert</span>
+		</div>
+		<div class="rows" id="uiux_skillRows">
+			<span class="row1">HTML<br></span>
+			<span class="row2">CSS<br></span>
+			<span class="row3">Javascript<br></span>
+			<span class="row4">Objective-C/Swift<br></span>
+			<span class="row5">Java<br></span>
+			<span class="row6">C++</span>
+		</div>
+		<div class="bars" id="uiux_skillBars">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
+			<div class="bar4"></div>
+			<div class="bar5"></div>
+			<div class="bar6"></div>
+		</div>
+	</div>
+	<div class="uiux_software">
+		<div class="grid" id="uiux_softwareGrid">
+			<div class="gridLine1 uiux_software_gridLines"></div>
+			<div class="gridLine2 uiux_software_gridLines"></div>
+			<div class="gridLine3 uiux_software_gridLines"></div>
+			<div class="gridLine4 uiux_software_gridLines"></div>
+		</div>
+		<div class="columns" id="uiux_softwareColumns">
+			<span class="column1">Beginner</span>
+			<span class="column2">Intermediate</span>
+			<span class="column3">Advanced</span>
+			<span class="column4">Expert</span>
+		</div>
+		<div class="rows" id="uiux_softwareRows">
+			<span class="row1">Photoshop<br></span>
+			<span class="row2">Illustrator<br></span>
+			<span class="row3">After Effects<br></span>
+			<span class="row4">Cinema 4D<br></span>
+		</div>
+		<div class="bars" id="uiux_softwareBars">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
+			<div class="bar4"></div>
+		</div>
+	</div>
+	<div class="uiux_exp" id="uiuxImagesBox">
+		<div class="exp_images_box">
+			<div class="mysite">
+				<div class="mysite_overlay">
+					<span class="mysite_overlay_text">JVargoDesign<br>I coded this site from scratch.</span>
+				</div>
+				<img src="my_site.png" class="exp_images" width="400px" height="200px" />
+			</div>
+			<div class="moodmusic">
+				<a href="https://invis.io/QD83MJ5H4">
+				<div class="moodmusic_overlay">
+					<span class="moodmusic_overlay_text">Mood Music<br>Design & Prototype</span>
+				</div>
+				<img src="mood_music.png" class="exp_images" width="400px" height="200px" />
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--  Composer  !-->
+
+<div class="comp_buttons" id="buttonsRight">
+	<div class="comp_awards_button" id="comp_awardsButton" onclick="comp_awardsClick()">
+		<div class="comp_awards_innerButton">
+			<span class="comp_awards_buttonText" id="comp_awardsButtonText">Awards</span>
+		</div>
+	</div>
+	<div class="comp_software_button" id="comp_softwareButton" onclick="comp_softwareClick()">
+		<div class="comp_software_innerButton">
+			<span class="comp_software_buttonText" id="comp_softwareButtonText">Software</span>
+		</div>
+	</div>
+	<div class="comp_exp_button" id="comp_expButton" onclick="comp_expClick()">
+		<div class="comp_exp_innerButton">
+			<span class="comp_exp_buttonText" id="comp_expButtonText">Experience</span>
+		</div>
+	</div>
+</div>
+<div class="comp_content" id="contentRight">
+	<div class="comp_awards" id="compAwards">
+		<div class="comp_awards_box">
+			<div class="award1">
+				<img src="nomination.png" width="300px" />
+				<span class="award_text">"Two Pink Lines" (short)</span>
+			</div>
+		</div>
+	</div>
+	<div class="comp_software">
+		<div class="grid" id="comp_softwareGrid">
+			<div class="gridLine1 comp_software_gridLines"></div>
+			<div class="gridLine2 comp_software_gridLines"></div>
+			<div class="gridLine3 comp_software_gridLines"></div>
+			<div class="gridLine4 comp_software_gridLines"></div>
+		</div>
+		<div class="columns" id="comp_softwareColumns">
+			<span class="column1">Beginner</span>
+			<span class="column2">Intermediate</span>
+			<span class="column3">Advanced</span>
+			<span class="column4">Expert</span>
+		</div>
+		<div class="rows" id="comp_softwareRows">
+			<span class="row1">Logic<br></span>
+			<span class="row2">Pro Tools<br></span>
+			<span class="row3">Digital Performer<br></span>
+		</div>
+		<div class="bars" id="comp_softwareBars">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
+		</div>
+	</div>
+	<div class="comp_exp" id="compImagesBox">
+		<div class="comp_images_box">
+			<div class="juxtaposition">
+				<div class="juxtaposition_overlay">
+					<span class="juxtaposition_overlay_text">"Juxtaposition" (short) (2011)</span>
+				</div>
+				<img src="juxtaposition.png" class="exp_images" width="400px" height="200px" />
+			</div>
+			<div class="twopinklines">
+				<div class="twopinklines_overlay">
+					<span class="twopinklines_overlay_text">"Two Pink Lines" (short) (2015)</span>
+				</div>
+				<img src="two_pink_lines.png" class="exp_images" width="400px" height="200px" />
+			</div>
+			<div class="powertrials">
+				<div class="powertrials_overlay">
+					<span class="powertrials_overlay_text">"Power Trials" (web series)</span>
+				</div>
+				<img src="power_trials.jpg" class="exp_images" width="400px" height="200px" />
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+
+//  Global vars
+
+var bgleft = document.getElementById("bgL");
+var bgright = document.getElementById("bgR");
+var title = document.getElementById("name");
+var uiux = document.getElementById("theUIUX");
+var comp = document.getElementById("theComp");
+var uiuxBox = document.getElementById("uiuxB");
+var compBox = document.getElementById("compB");
+var uiuxUnderline = document.getElementById("uiuxUnderline");
+var compUnderline = document.getElementById("compUnderline");
+var diagonal = document.getElementById("dia");
+var socialIcons = document.getElementById("icons");
+var twitter = document.getElementById("twitter");
+var behance = document.getElementById("behance");
+var soundcloud = document.getElementById("soundcloud");
+var seeMoreBox = document.getElementById("seeMoreBox");
+var listen = document.getElementById("listen");
+var aboutMeBox = document.getElementById("meBox");
+
+var contactButtonBox = document.getElementById("contactBox");
+var contactModalWindow = document.getElementById("modalWindow");
+var contactName = document.getElementById("sendName");
+var contactEmail = document.getElementById("sendEmail");
+var contactMessage = document.getElementById("sendMessage");
+
+var portraitFrame = document.getElementById("picFrame");
+var cycleTextBox = document.getElementById("cyclingTextBox");
+var cycleText1 = document.getElementById("cycleText1");
+var cycleText2 = document.getElementById("cycleText2");
+var cycleText3 = document.getElementById("cycleText3");
+var cycleText4 = document.getElementById("cycleText4");
+var cycleText5 = document.getElementById("cycleText5");
+var cycleText6 = document.getElementById("cycleText6");
+var paragraphText = document.getElementById("paragraph1");
+
+var returnX = document.getElementById("X");
+
+var uiuxcontent = document.getElementById("contentLeft");
+var uiuxButtons = document.getElementById("buttonsLeft");
+var uiux_skillsButtonText = document.getElementById("uiux_skillsButtonText");
+var uiux_expButtonText = document.getElementById("uiux_expButtonText");
+var uiux_softwareButtonText = document.getElementById("uiux_softwareButtonText");
+var uiux_skill_bars = document.getElementById("uiux_skillBars");
+var uiux_skill_rows = document.getElementById("uiux_skillRows");
+var uiux_skill_columns = document.getElementById("uiux_skillColumns");
+var uiux_skill_grid = document.getElementById("uiux_skillGrid");
+var uiux_software_bars = document.getElementById("uiux_softwareBars");
+var uiux_software_rows = document.getElementById("uiux_softwareRows");
+var uiux_software_columns = document.getElementById("uiux_softwareColumns");
+var uiux_software_grid = document.getElementById("uiux_softwareGrid");
+var uiuxImagesBox = document.getElementById("uiuxImagesBox");
+
+var compcontent = document.getElementById("contentRight");
+var compButtons = document.getElementById("buttonsRight");
+var comp_awardsButtonText = document.getElementById("comp_awardsButtonText");
+var comp_softwareButtonText = document.getElementById("comp_softwareButtonText");
+var comp_expButtonText = document.getElementById("comp_expButtonText");
+var comp_awards = document.getElementById("compAwards");
+var comp_software_bars = document.getElementById("comp_softwareBars");
+var comp_software_rows = document.getElementById("comp_softwareRows");
+var comp_software_columns = document.getElementById("comp_softwareColumns");
+var comp_software_grid = document.getElementById("comp_softwareGrid");
+var compImagesBox = document.getElementById("compImagesBox");
+
+var inTransition = true;
+var transitionStatus = "none";
+var uiuxButtonStatus = "none";
+var compButtonStatus = "none";
+
+var style = "desktop";
+var messageSent = false;
+
+
+//  Functions
+
+function enterUIUXUnderline() {
+	if (!inTransition) {
+		uiux.style.color = "rgb(191, 132, 255)";
+		uiux.style.cursor = "pointer";
+		uiuxUnderline.style.backgroundColor = "rgb(191, 132, 255)";
+		uiuxUnderline.style.width = "138px";
+	}
+}
+function exitUIUXUnderline() {
+	if (!inTransition) {
+		uiux.style.color = "rgb(255,255,255)";
+		uiux.style.cursor = "default";
+		uiuxUnderline.style.backgroundColor = "rgb(255,255,255)";
+		uiuxUnderline.style.width = "0vw";
+	}
+}
+function enterCompUnderline() {
+	if (!inTransition) {
+		comp.style.color = "rgb(191, 132, 255)";
+		comp.style.cursor = "pointer";
+		compUnderline.style.backgroundColor = "rgb(191, 132, 255)";
+		compUnderline.style.width = "135px";
+	}
+}
+function exitCompUnderline() {
+	if (!inTransition) {
+		comp.style.color = "rgb(255,255,255)";
+		comp.style.cursor = "default";
+		compUnderline.style.backgroundColor = "rgb(255,255,255)";
+		compUnderline.style.width = "0vw";
+	}
+}
+
+function contactClicked() {
+	contactModalWindow.style.visibility = "visible";
+	contactModalWindow.style.opacity = 1;
+}
+function closeModal() {
+	contactModalWindow.style.visibility = "hidden";
+	contactModalWindow.style.opacity = 0;
+}
+function sendMessage() {
+	// AJAX
+	if (!messageSent) {
+		if (contactName != null && contactEmail != null && contactMessage !=null) {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (xhttp.readyState == 4 && xhttp.status == 200) {
+					setTimeout(function() {
+						document.getElementById("contactDisplay").innerHTML = xhttp.responseText;
+						contactName.value = "";
+						contactEmail.value = "";
+						contactMessage.value = "";
+						document.getElementById("contactSendText").innerHTML = "CLOSE";
+						messageSent = true;
+					}, 100);
+				}
+				if (xhttp.readyState == 4 && xhttp.status == 500) {
+					document.getElementById("contactDisplay").innerHTML = "Internal error. Please try again later.";
+				}
+			};
+			console.log("name=" + contactName.value + "&email=" + contactEmail.value + "&message=" + contactMessage.value);
+			xhttp.open("POST", "email.php", true);
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xhttp.send("name=" + contactName.value + "&email=" + contactEmail.value + "&message=" + contactMessage.value);
+		}
+	}
+	else {
+		closeModal();
+	}
+}
+
+function animateUp() {
+
+	// reset main classes except title
+	diagonal.className = "diagonal";
+	uiuxBox.className = "uiuxBox";
+	compBox.className = "compBox";
+	aboutMeBox.className = "aboutMeBox";
+
+	inTransition = true;
+	transitionStatus = "up";
+	
+	diagonal.className += " diaUpTrans";
+	uiuxBox.className += " uiuxUpTrans";
+	compBox.className += " compUpTrans";
+	aboutMeBox.className += " exitAboutMe";
+	
+	if (style == "mobile") {
+		uiux.style.left = "-50%";
+		comp.style.left = "-50%";
+	}
+
+	returnX.style.opacity = 1;
+	returnX.style.visibility = "visible";
+	
+	setTimeout(function() {
+		showAboutMeText(1, 1.5);
+		
+		setTimeout(function() {
+			portraitFrame.style.opacity = 1;
+			portraitFrame.style.visibility = "visible";
+			cycleTextBox.style.opacity = 1;
+			cycleTextBox.style.visibility = "visible";
+		}, 500);
+		setTimeout(function() {
+			cycleText1.className += " cycle1";
+			cycleText2.className += " cycle2";
+			cycleText3.className += " cycle3";
+			cycleText4.className += " cycle4";
+			cycleText5.className += " cycle5";
+			cycleText6.className += " cycle6";
+		}, 750);
+	}, 1500);
+}
+function animateLeft() {
+	if (!inTransition) {
+		resetMainClasses();
+	
+		inTransition = true;
+		transitionStatus = "left";
+		
+		contactButtonBox.style.opacity = 0;
+		contactButtonBox.style.visibility = "hidden";
+		twitter.style.opacity = 0;
+		twitter.style.visibility = "hidden";
+		soundcloud.style.opacity = 0;
+		soundcloud.style.visibility = "hidden";
+		if (style == "mobile") {
+			behance.style.opacity = 0;
+			behance.style.visibility = "hidden";
+			setTimeout(function() {
+				uiux.style.left = "-50%";
+				comp.style.left = "-50%";
+			}, 500);
+		}
+		else {
+			setTimeout(function() {
+				seeMore.style.opacity = 1;
+				seeMore.style.left = "7vw";
+				seeMore.style.visibility = "visible";
+			}, 1750);
+		}
+	
+		//bgleft.style.opacity = 1;
+		//bgleft.className += " bgTransitionLeft";
+		uiux.style.color = "rgb(0, 255, 153)";
+		uiux.style.cursor = "default";
+		uiuxUnderline.style.width = "0vw";
+		diagonal.className += " diaLeftTrans";
+		uiuxBox.className += " uiuxLeftTrans";
+		compBox.className += " compLeftTrans";
+		title.className += " exitTitle";
+		aboutMeBox.className += " exitAboutMe";
+		returnX.style.opacity = 1;
+		returnX.style.visibility = "visible";
+		uiuxcontent.style.opacity = 1;
+		uiuxcontent.style.visibility = "visible";
+	
+		/*setTimeout(function() { // expand left bg
+			bgleft.style.width = "100%";
+		}, 500);*/
+		setTimeout(function() { // show left buttons
+			uiuxButtons.style.opacity = 1;
+			uiuxButtons.style.visibility = "visible";
+		}, 1500);
+	}
+}
+function animateRight() {
+	if (!inTransition) {
+		resetMainClasses();
+	
+		inTransition = true;
+		transitionStatus = "right";
+		
+		contactButtonBox.style.opacity = 0;
+		contactButtonBox.style.visibility = "hidden";
+		twitter.style.opacity = 0;
+		twitter.style.visibility = "hidden";
+		behance.style.opacity = 0;
+		behance.style.visibility = "hidden";
+		if (style == "mobile") {
+			soundcloud.style.opacity = 0;
+			soundcloud.style.visibility = "hidden";
+			setTimeout(function() {
+				uiux.style.left = "-50%";
+				comp.style.left = "-50%";
+			}, 500);
+		}
+		else {
+			setTimeout(function() {
+				listen.style.opacity = 1;
+				listen.style.left = "13.5vw";
+				listen.style.visibility = "visible";
+			}, 1750);
+		}
+	
+		//bgright.style.opacity = 1;
+		comp.style.color = "rgb(0, 255, 153)";
+		comp.style.cursor = "default";
+		compUnderline.style.width = "0vw";
+		diagonal.className += " diaRightTrans";
+		uiuxBox.className += " uiuxRightTrans";
+		compBox.className += " compRightTrans";
+		title.className += " exitTitle";
+		aboutMeBox.className += " exitAboutMe";
+		returnX.style.opacity = 1;
+		returnX.style.visibility = "visible";
+		compcontent.style.opacity = 1;
+		compcontent.style.visibility = "visible";
+	
+		setTimeout(function() {
+			//bgright.style.width = "100%"; // expand right bg
+		}, 500);
+		setTimeout(function() { // show right buttons
+			compButtons.style.opacity = 1;
+			compButtons.style.visibility = "visible";
+		}, 1500);
+	}
+}
+
+function resetMainClasses() {
+	diagonal.className = "diagonal";
+	uiuxBox.className = "uiuxBox";
+	compBox.className = "compBox";
+	title.className = "titleBox";
+	aboutMeBox.className = "aboutMeBox";
+}
+function resetUIUXSkillsClasses() {
+	uiux_skill_bars.className = "bars";
+	uiux_skill_rows.className = "rows";
+	uiux_skill_columns.className = "columns";
+	uiux_skill_grid.className = "grid";
+}
+function resetUIUXSoftwareClasses() {
+	uiux_software_bars.className = "bars";
+	uiux_software_rows.className = "rows";
+	uiux_software_columns.className = "columns";
+	uiux_software_grid.className = "grid";
+}
+function resetUIUXExpClasses() {
+	uiuxImagesBox.className = "uiux_exp";
+}
+function resetCompAwardsClasses() {
+	comp_awards.className = "comp_awards";
+}
+function resetCompSoftwareClasses() {
+	comp_software_bars.className = "bars";
+	comp_software_rows.className = "rows";
+	comp_software_columns.className = "columns";
+	comp_software_grid.className = "grid";
+}
+function resetCompExpClasses() {
+	compImagesBox.className = "comp_exp";
+}
+
+function animateUIUXSkills() {
+	resetUIUXSkillsClasses();
+	setTimeout(function(){
+		uiux_skill_bars.className += " uiux_skill_barAnim";
+		uiux_skill_rows.className += " rowAnim";
+		uiux_skill_columns.className += " columnAnim";
+		uiux_skill_grid.className += " gridAnim";
+	}, 50);
+	
+	// show logged hours in circle
+	
+}
+function animateUIUXSkillsReverse() {
+	setTimeout(function(){
+		uiux_skill_bars.className += " uiux_skill_barAnimReverse";
+		uiux_skill_rows.className += " rowAnimReverse";
+		uiux_skill_columns.className += " columnAnimReverse";
+		uiux_skill_grid.className += " gridAnimReverse";
+	}, 50);
+}
+function animateUIUXSoftware() {
+	resetUIUXSoftwareClasses();
+	setTimeout(function(){
+		uiux_software_bars.className += " uiux_software_barAnim";
+		uiux_software_rows.className += " rowAnim";
+		uiux_software_columns.className += " columnAnim";
+		uiux_software_grid.className += " gridAnim";
+	}, 50);
+	
+	// show logged hours in circle
+	
+}
+function animateUIUXSoftwareReverse() {
+	setTimeout(function(){
+		uiux_software_bars.className += " uiux_software_barAnimReverse";
+		uiux_software_rows.className += " rowAnimReverse";
+		uiux_software_columns.className += " columnAnimReverse";
+		uiux_software_grid.className += " gridAnimReverse";
+	}, 50);
+}
+function animateUIUXExp() {
+	resetUIUXExpClasses();
+	// jvargo.com
+	setTimeout(function(){
+		uiuxImagesBox.className += " expImagesAnim";
+		uiuxImagesBox.style.opacity = 1;
+		uiuxImagesBox.style.visibility = "visible";
+	}, 50);
+}
+function animateUIUXExpReverse() {
+	setTimeout(function(){
+		uiuxImagesBox.className += " expImagesAnimReverse";
+	}, 50);
+	setTimeout(function(){
+		uiuxImagesBox.style.opacity = 0;
+		uiuxImagesBox.style.visibility = "hidden";
+	}, 300);
+}
+
+function animateCompAwards() {
+	resetCompAwardsClasses();
+	setTimeout(function(){
+		comp_awards.className += " awardsAnim";
+	}, 50);
+}
+function animateCompAwardsReverse() {
+	setTimeout(function(){
+		comp_awards.className += " awardsAnimReverse";
+	}, 50);
+}
+function animateCompSoftware() {
+	resetCompSoftwareClasses();
+	setTimeout(function(){
+		comp_software_bars.className += " comp_software_barAnim";
+		comp_software_rows.className += " rowAnim";
+		comp_software_columns.className += " columnAnim";
+		comp_software_grid.className += " gridAnim";
+	}, 50);
+}
+function animateCompSoftwareReverse() {
+	setTimeout(function(){
+		comp_software_bars.className += " comp_software_barAnimReverse";
+		comp_software_rows.className += " rowAnimReverse";
+		comp_software_columns.className += " columnAnimReverse";
+		comp_software_grid.className += " gridAnimReverse";
+	}, 50);
+}
+function animateCompExp() {
+	resetCompExpClasses();
+	setTimeout(function(){
+		compImagesBox.className += " expImagesAnim";
+		compImagesBox.style.opacity = 1;
+		compImagesBox.style.visibility = "visible";
+	}, 50);
+}
+function animateCompExpReverse() {
+	setTimeout(function(){
+		compImagesBox.className += " expImagesAnimReverse";
+	}, 50);
+	setTimeout(function(){
+		compImagesBox.style.opacity = 0;
+		compImagesBox.style.visibility = "hidden";
+	}, 300);
+}
+
+function Xclick() {
+	resetMainClasses();
+	
+	if (transitionStatus == "left") {
+		// Reverse left transition
+		diagonal.className += " diaLeftReturn";
+		uiuxBox.className += " uiuxLeftReturn";
+		compBox.className += " compLeftReturn";
+		title.className += " reEnterTitle";
+		aboutMeBox.className += " reEnterAboutMe";
+		
+		if (uiuxButtonStatus == "skills") {
+			animateUIUXSkillsReverse();
+			uiux_skillsButtonText.style.color = "rgb(255,255,255)";
+		}
+		else if (uiuxButtonStatus == "software") {
+			animateUIUXSoftwareReverse();
+			uiux_softwareButtonText.style.color = "rgb(255,255,255)";
+		}
+		else if (uiuxButtonStatus == "exp") {
+			animateUIUXExpReverse();
+			uiux_expButtonText.style.color = "rgb(255,255,255)";
+		}
+		uiux.style.color = "rgb(255,255,255)";
+		uiuxButtons.style.opacity = 0;
+		uiuxButtons.style.visibility = "hidden";
+		/*setTimeout(function() {
+			bgleft.style.opacity = 0;
+			bgleft.style.width = "50%";
+		}, 450);*/
+		setTimeout(function() {
+			uiuxcontent.style.opacity = 0;
+			uiuxcontent.style.visibility = "hidden";
+		}, 1000);
+		
+		twitter.style.opacity = 1;
+		twitter.style.visibility = "visible";
+		soundcloud.style.opacity = 1;
+		soundcloud.style.visibility = "visible";
+		if (style == "mobile") {
+			behance.style.opacity = 1;
+			behance.style.visibility = "visible";
+		}
+		else {
+			seeMore.style.opacity = 0;
+			seeMore.style.left = "2vw";
+			seeMore.style.visibility = "hidden";
+		}
+		
+		uiuxButtonStatus = "none";
+	}
+	else if (transitionStatus == "right") {
+		// Reverse right transition
+		diagonal.className += " diaRightReturn";
+		uiuxBox.className += " uiuxRightReturn";
+		compBox.className += " compRightReturn";
+		title.className += " reEnterTitle";
+		aboutMeBox.className += " reEnterAboutMe";
+		
+		if (compButtonStatus == "awards") {
+			animateCompAwardsReverse();
+			comp_awardsButtonText.style.color = "rgb(255,255,255)";
+		}
+		else if (compButtonStatus == "software") {
+			animateCompSoftwareReverse();
+			comp_softwareButtonText.style.color = "rgb(255,255,255)";
+		}
+		else if (compButtonStatus == "exp") {
+			animateCompExpReverse();
+			comp_expButtonText.style.color = "rgb(255,255,255)";
+		}
+		comp.style.color = "rgb(255,255,255)";
+		compButtons.style.opacity = 0;
+		compButtons.style.visibility = "hidden";
+		/*setTimeout(function() {
+			bgright.style.opacity = 0;
+			bgright.style.width = "50%";
+		}, 450);*/
+		setTimeout(function() {
+			compcontent.style.opacity = 0;
+			compcontent.style.visibility = "hidden";
+		}, 1000);
+		
+		twitter.style.opacity = 1;
+		twitter.style.visibility = "visible";
+		behance.style.opacity = 1;
+		behance.style.visibility = "visible";
+		if (style == "mobile") {
+			soundcloud.style.opacity = 1;
+			soundcloud.style.visibility = "visible";
+		}
+		else {
+			listen.style.opacity = 0;
+			listen.style.left = "8.5vw";
+			listen.style.visibility = "hidden";
+		}
+		
+		compButtonStatus = "none";
+	}
+	else if (transitionStatus == "up") {
+		diagonal.className += " diaUpReturn";
+		uiuxBox.className += " uiuxUpReturn";
+		compBox.className += " compUpReturn";
+		aboutMeBox.className += " reEnterAboutMe";
+		
+		portraitFrame.style.opacity = 0;
+		portraitFrame.style.visibility = "hidden";
+		paragraphText.style.opacity = 0;
+		cycleTextBox.style.opacity = 0;
+		setTimeout(function() {
+			destroyChildren("paragraph1");
+			cycleText1.className = "cycleText";
+			cycleText2.className = "cycleText";
+			cycleText3.className = "cycleText";
+			cycleText4.className = "cycleText";
+			cycleText5.className = "cycleTextLong";
+			cycleText6.className = "cycleTextLong";
+			cycleTextBox.style.visibility = "hidden";
+			//paragraphText.style.left = "30vw";
+			greatestWidth = 0;
+		}, 1000);
+	}
+	else {
+		// Do nothing
+	}
+	
+	if (style == "mobile") {
+		setTimeout(function() {
+			uiux.style.left = "-75%";
+			comp.style.left = "-25%";
+		}, 500);
+	}
+	
+	returnX.style.opacity = 0;
+	returnX.style.visibility = "hidden";
+	contactButtonBox.style.opacity = 1;
+	contactButtonBox.style.visibility = "visible";
+	setTimeout(function() {
+		inTransition = false;
+		transitionStatus = "none";
+		windowResized();
+	}, 1500);
+}
+
+function uiux_skillsClick() {
+
+	// Show skills
+
+	resetUIUXSkillsClasses();
+	
+	animateUIUXSkills();
+	if (uiuxButtonStatus == "exp") {
+		animateUIUXExpReverse();
+	}
+	else if (uiuxButtonStatus == "software") {
+		animateUIUXSoftwareReverse();
+	}
+	uiux_skillsButtonText.style.color = "rgb(191, 132, 255)";
+	uiux_expButtonText.style.color = "rgb(255,255,255)";
+	uiux_softwareButtonText.style.color = "rgb(255,255,255)";
+	
+	uiuxButtonStatus = "skills";
+}
+function uiux_softwareClick() {
+
+	// Show software
+	
+	resetUIUXSoftwareClasses();
+	
+	animateUIUXSoftware();
+	if (uiuxButtonStatus == "skills") {
+		animateUIUXSkillsReverse();
+	}
+	else if (uiuxButtonStatus == "exp") {
+		animateUIUXExpReverse();
+	}
+	uiux_skillsButtonText.style.color = "rgb(255,255,255)";
+	uiux_expButtonText.style.color = "rgb(255,255,255)";
+	uiux_softwareButtonText.style.color = "rgb(191, 132, 255)";
+	
+	uiuxButtonStatus = "software";
+}
+function uiux_expClick() {
+	
+	// Show experience
+	
+	resetUIUXExpClasses();
+	
+	animateUIUXExp();
+	if (uiuxButtonStatus == "skills") {
+		animateUIUXSkillsReverse();
+	}
+	else if (uiuxButtonStatus == "software") {
+		animateUIUXSoftwareReverse();
+	}
+	uiux_skillsButtonText.style.color = "rgb(255,255,255)";
+	uiux_expButtonText.style.color = "rgb(191, 132, 255)";
+	uiux_softwareButtonText.style.color = "rgb(255,255,255)";
+	
+	uiuxButtonStatus = "exp";
+}
+
+function comp_awardsClick() {
+
+	// Show awards
+
+	resetCompAwardsClasses();
+	
+	animateCompAwards();
+	if (compButtonStatus == "software") {
+		animateCompSoftwareReverse();
+	}
+	else if (compButtonStatus == "exp") {
+		animateCompExpReverse();
+	}
+	comp_awardsButtonText.style.color = "rgb(191, 132, 255)";
+	comp_softwareButtonText.style.color = "rgb(255,255,255)";
+	comp_expButtonText.style.color = "rgb(255,255,255)";
+	
+	compButtonStatus = "awards";
+}
+function comp_softwareClick() {
+
+	// Show software
+
+	resetCompSoftwareClasses();
+	
+	animateCompSoftware();
+	if (compButtonStatus == "awards") {
+		animateCompAwardsReverse();
+	}
+	else if (compButtonStatus == "exp") {
+		animateCompExpReverse();
+	}
+	comp_awardsButtonText.style.color = "rgb(255,255,255)";
+	comp_softwareButtonText.style.color = "rgb(191, 132, 255)";
+	comp_expButtonText.style.color = "rgb(255,255,255)";
+	
+	compButtonStatus = "software";
+}
+function comp_expClick() {
+	
+	// Show experience
+	
+	resetCompExpClasses();
+	
+	animateCompExp();
+	if (compButtonStatus == "awards") {
+		animateCompAwardsReverse();
+	}
+	else if (compButtonStatus == "software") {
+		animateCompSoftwareReverse();
+	}
+	comp_awardsButtonText.style.color = "rgb(255,255,255)";
+	comp_softwareButtonText.style.color = "rgb(255,255,255)";
+	comp_expButtonText.style.color = "rgb(191, 132, 255)";
+	
+	compButtonStatus = "exp";
+}
+
+
+//  Typewriter
+
+// CONTROL VALUES
+var charWidth = 0;
+var spaceWidth = 6;
+var animSpeed = 90;
+var fadeSec = 0.5;
+var lineSpace = 30;
+var paragraphSpace = 60;
+var indentSpace = 0;
+var paragraphWidth = 0.4;
+var text = "Hi, welcome!#I have a passion for UI/UX Design, as well as Film and Game Music.*I love making things beautiful and functional.#Feel free to contact me if you like my work.";
+//  # = paragraph break, * = line break  -------------
+
+var greatestWidth = 0;
+
+/*function charsFirstPass(t, lim) {
+	console.log("limit: " + lim);
+	var id = "passZone";
+	var zone = document.getElementById(id);
+	var width = 0;
+	var lineWidth = [""];
+	var chars = t.split("");
+	for (var i = 0; i < chars.length; i++) {
+		if (chars[i] == "#") {
+			//save line width
+			if (!lineWidth[0]) {
+				lineWidth[0] = width;
+			}
+			else {
+				lineWidth.push(width);
+			}
+			width = 0;
+		}
+		else {
+			var s = "<span id ='" + id + "char" + i +
+					"' class='aboutMeText' style='top:" + top + "px; left:" + width + "px;'>"
+					+ chars[i] + "</span>";
+			var node = document.createElement("div");
+			node.innerHTML = s;
+			zone.appendChild(node);
+			
+			var blah = document.getElementById(id + "char" + i);
+			if (width >= lim && blah.offsetWidth == 0) {
+				//save line width
+				if (!lineWidth[0]) {lineWidth[0] = width;}
+				else {lineWidth.push(width);}
+				width = 0;
+			}
+			
+			console.log(chars[i]);
+			if (blah.offsetWidth == 0) {
+				width += spaceWidth;
+				console.log("width: " + width);
+			}
+			else {
+				width += (blah.offsetWidth+charWidth);
+				console.log("width: " + width);
+			}
+			
+			if (i == (chars.length-1)) {
+				//save line width
+				if (!lineWidth[0]) {lineWidth[0] = width;}
+				else {lineWidth.push(width);}
+			}
+		}
+	}
+	destroyChildren("passZone");
+	console.log(lineWidth);
+	return lineWidth;
+	
+}*/
+/*function writeCharsCentered(id, t, lim, centered, lineWidths, delay) {
+	console.log("limit: " + lim);
+	console.log("innerWidth: " + window.innerWidth);
+	console.log(lineWidths);
+	var zone = document.getElementById(id);
+	var width = 0;
+	var top = 0;
+	var chars = t.split("");
+	if (centered) {
+		var lineIndex = 0;
+		if (lineWidths) {
+			width = (lim - lineWidths[0])/2;
+			lineIndex++;
+		}
+	}
+	for (var i = 0; i < chars.length; i++) {
+		if (chars[i] == "#") {
+			top += paragraphSpace;
+			width = 0;
+			if (centered && lineWidths[lineIndex]) {
+				width = (lim - lineWidths[lineIndex])/2;
+				console.log("lineWidths[" + lineIndex + "]: " + lineWidths[lineIndex]);
+				console.log("starting new line at ((limit - new line width)/2): " + ((lim - lineWidths[lineIndex])/2));
+				lineIndex++;
+			}
+			if (lineTest.style.left == 0) {
+				lineTest.style.left = (width + (window.innerWidth*0.3)) + "px";
+				lineTest.style.width = lineWidths[lineIndex-1] + "px";
+			}
+		}
+		else {
+			var s = "<span id ='" + id + "char" + i +
+					"' class='aboutMeText' style='top:" + top + "px; left:" + width + 
+					"px;animation:charAnim " + fadeSec + "s linear " + ((i/animSpeed) + delay) + "s forwards;'>"
+					+ chars[i] + "</span>";
+			var node = document.createElement("div");
+			node.innerHTML = s;
+			zone.appendChild(node);
+			//console.log(node);
+			
+			var blah = document.getElementById(id + "char" + i);
+			if (width >= lim && blah.offsetWidth == 0) {
+				width = 0;
+				top += lineSpace;
+				if (centered && lineWidths[lineIndex]) {
+					width = (lim - lineWidths[lineIndex])/2;
+					lineIndex++;
+				}
+			}
+			
+			console.log(chars[i]);
+			if (blah.offsetWidth == 0) {
+				width += spaceWidth;
+				console.log("NOW width: " + width);
+			}
+			else {
+				width += (blah.offsetWidth+charWidth);
+				console.log("NOW width: " + width);
+			}
+			
+			if (width > greatestWidth) {
+				console.log("greatestWidth +" + (width-greatestWidth));			
+				greatestWidth = width;
+				console.log("greatestWidth: " + greatestWidth);
+			}
+		}
+	}
+}*/
+function writeChars(id, t, lim, delay) {
+	var zone = document.getElementById(id);
+	var width = 0;
+	var top = 0;
+	var lineBreaks = 0;
+	var chars = t.split("");
+	for (var i = 0; i < chars.length; i++) {
+		if (chars[i] == "#") {
+			lineBreaks++;
+			top += paragraphSpace;
+			width = (indentSpace * lineBreaks);
+		}
+		else if (chars[i] == "*") {
+			top += lineSpace;
+			width = (indentSpace * lineBreaks);
+		}
+		else {
+			var s = "<span id ='" + id + "char" + i +
+					"' class='aboutMeText' style='top:" + top + "px; left:" + width + 
+					"px;animation:charAnim " + fadeSec + "s linear " + ((i/animSpeed) + delay) + "s forwards;'>"
+					+ chars[i] + "</span>";
+			var node = document.createElement("div");
+			node.innerHTML = s;
+			zone.appendChild(node);
+			
+			var blah = document.getElementById(id + "char" + i);
+			if (blah.offsetWidth == 0) {
+				width += spaceWidth;
+			}
+			else {
+				width += (blah.offsetWidth+charWidth);
+			}
+			
+			if (width >= lim && blah.offsetWidth == 0) {
+				width = (indentSpace * lineBreaks);
+				top += lineSpace;
+			}
+			
+			if (width > greatestWidth) {
+				greatestWidth = width;
+			}
+		}
+	}
+}
+function destroyChildren(id) {
+	var obj = document.getElementById(id);
+	if (obj) {
+		while (obj.hasChildNodes()) {
+			obj.removeChild(obj.lastChild);
+		}
+	}
+}
+function resizeParagraphChars(id, width, centered) {
+	var nodes = document.getElementById(id).childNodes;
+	var w = 0;
+	var t = 0;
+	var chars = text.split("");
+	if (nodes) {
+		if (centered) {
+			var lineWidths = charsFirstPass(text, width);
+			var lineIndex = 0;
+			if (lineWidths) {
+				console.log("line width " + lineIndex + ": " + lineWidths[lineIndex]);
+				w = (width - lineWidths[0])/2;
+				console.log("line starting width " + lineIndex + ": " + w);
+				lineIndex++;
+			}
+		}
+		for (var i=0; i < nodes.length; i++) {
+		
+			if (nodes[i].hasChildNodes() && chars[i] == "#") {
+				console.log("!###! char " + i + ": " + chars[i]);
+				t += lineSpace;
+				w = 0;
+				if (centered && lineWidths[lineIndex]) {
+					console.log("line width " + lineIndex + ": " + lineWidths[lineIndex]);
+					w = (width - lineWidths[lineIndex])/2;
+					console.log("line starting width " + lineIndex + ": " + w);
+					lineIndex++;
+				}
+			}
+			else {
+				if (nodes[i].hasChildNodes()) {
+					console.log("childNodes[" + i + "] style left: " + nodes[i].childNodes[0].style.left);
+					nodes[i].childNodes[0].style.left = w + "px";
+					nodes[i].childNodes[0].style.top = t + "px";
+					console.log("char " + i + ": " + chars[i] + "; left: " + w + "px; top: " + t + "px");
+				}
+				var lastNode = document.getElementById(id + "char" + i);
+				if (lastNode.offsetWidth == 0) {
+					w += spaceWidth;
+				}
+				else {
+					w += lastNode.offsetWidth+charWidth;
+				}
+				if (w >= width && lastNode.offsetWidth == 0) {
+					w = 0;
+					t += lineSpace;
+					if (centered && lineWidths[lineIndex]) {
+						console.log("line width " + lineIndex + ": " + lineWidths[lineIndex]);
+						w = (lim - lineWidths[lineIndex])/2;
+						console.log("line starting width " + lineIndex + ": " + w);
+						lineIndex++;
+					}
+				}
+			//console.log("char " + i + " changed to: " + w);
+			//console.log("node left is now: " + nodes[i].childNodes[0].style.left);
+			}
+		}
+	}
+}
+function resizeParagraph() {
+	/*if (greatestWidth > 0) {
+		var adjustedLeft = (window.innerWidth - greatestWidth)/2;
+		paragraphText.style.left = adjustedLeft + "px";
+	}*/
+}
+function showAboutMeText(paraDelaySec, charsDelaySec) {
+	if (style == "mobile") {
+		paragraphWidth = 0.6;
+	}
+	
+	writeChars("paragraph1", text, (window.innerWidth * paragraphWidth), charsDelaySec);
+	
+	setTimeout(function() {
+		paragraphText.style.opacity = 1;
+	}, (paraDelaySec * 1000));
+}
+
+
+//  Particles
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+function particlesInitGreen() {
+	var generator = document.getElementById("particleGenerator");
+	console.log(generator);
+	var particleCount = 200;
+	for (var i = 0; i < particleCount; i++) {
+		var size = getRandomInt(1, 5);
+		var n = '<div class="particle" style="top:' + getRandomInt(15, 95) + '%; left:' + getRandomInt(5,95) + '%; width:'
+		+ size + 'px; height:' + size + 'px; animation-delay:' + (getRandomInt(0,30)/10) + 's; background-color:rgba('
+		+ getRandomInt(80, 160) + ',' + getRandomInt(185, 255) + ',' + getRandomInt(160, 255) + ',' + (getRandomInt(2, 8)/10) + ');"></div>';
+		console.log("Particle " + i + ": " + n);
+		var node = document.createElement("div");
+		node.innerHTML = n;
+		console.log("Node " + i + ": " + node);
+		generator.appendChild(node);
+	}
+}
+function particlesInitWhite() {
+	var generator = document.getElementById("particleGenerator");
+	console.log(generator);
+	var particleCount = 100;
+	for (var i = 0; i < particleCount; i++) {
+		var size = getRandomInt(1, 4);
+		var n = '<div class="particle" style="top:' + getRandomInt(15, 95) + '%; left:' + getRandomInt(5,95) + '%; width:'
+		+ size + 'px; height:' + size + 'px; animation-delay:' + (getRandomInt(0,30)/10) + 's; background-color:rgba(255,255,255,'
+		+ (getRandomInt(1, 6)/10) + ');"></div>';
+		console.log("Particle " + i + ": " + n);
+		var node = document.createElement("div");
+		node.innerHTML = n;
+		console.log("Node " + i + ": " + node);
+		generator.appendChild(node);
+	}
+}
+function removeAllParticles() {
+	var generator = document.getElementById("particleGenerator");
+	while (generator.hasChildNodes()) {
+		generator.removeChild(generator.lastChild);
+	}
+}
+
+
+// Init
+
+function windowResized() {
+	if (transitionStatus == "up") {
+		resizeParagraph();
+	}
+	else if (transitionStatus == "none") {
+		var uiuxRect = uiux.getBoundingClientRect();
+		var compRect = comp.getBoundingClientRect();
+		uiuxUnderline.style.left = (uiuxRect.left) + "px";
+		compUnderline.style.right = ((window.innerWidth - compRect.right)) + "px";
+		if (navigator.userAgent.indexOf("Firefox") != -1 )
+		{
+			compUnderline.style.right = ((window.innerWidth - compRect.right) - 12) + "px";
+		}
+	}
+	if (window.innerWidth < 720) {
+		style = "mobile";
+	}
+	else {
+		style = "desktop";
+	}
+}
+
+window.onload = function() {
+	if (navigator.userAgent.indexOf("Firefox") != -1 ) {
+			compUnderline.style.bottom = "40.5vh";
+	}
+	/*setTimeout(function() {
+		uiuxBox.style.left = "40vw";
+		uiuxBox.style.opacity = 1;
+		compBox.style.left = "60vw";
+		compBox.style.opacity = 1;
+	}, 1500);*/
+	setTimeout(function() {
+		contactButtonBox.style.opacity = 1;
+		contactButtonBox.style.visibility = "visible";
+		socialIcons.style.opacity = 1;
+		socialIcons.style.visibility = "visible";
+	}, 2000);
+	setTimeout(function() {
+		windowResized();
+		inTransition = false;
+	}, 2500);
+};
+window.onclick = function(event) {
+    if (event.target == contactModalWindow) {
+        contactModalWindow.style.visibility = "hidden";
+		contactModalWindow.style.opacity = 0;
+    }
+}
+window.addEventListener("resize", windowResized);
+
+</script>
+
+</html>
