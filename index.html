@@ -17,149 +17,211 @@
 
 <body>
 
-  <!-- Header (Info & Contact) -->
-  <div class="page-header jumbotron pb-4 text-center">
-    <h1 class="nameHeader mb-3">James Vargo</h1>
-    <h5 class="fontA colorA font-weight-light">Software Developer</h5>
-    <div class="contact row justify-content-around mx-auto pt-5">
-      <!-- Github -->
-      <a href="https://github.com/jvargeaux?tab=repositories" target="_blank" class="contact-item">
-        <i class="fab fa-github-square fa-2x"></i>
-        <p class="pt-1">GitHub</p>
-      </a>
-      <!-- LinkedIn -->
-      <a href="https://www.linkedin.com/in/james-vargo-34b4a0104/" target="_blank" class="contact-item">
-        <i class="fab fa-linkedin fa-2x"></i>
-        <p class="pt-1">LinkedIn</p>
-      </a>
-      <!-- Email -->
-      <a href="mailto:jvargeaux@gmail.com" class="contact-item">
-        <i class="fas fa-envelope fa-2x"></i>
-        <p class="pt-1">jvargeaux@gmail.com</p>
-      </a>
+
+  <!-- About Me -->
+  <section class="bio py-5">
+
+    <!-- Header (Info & Contact) -->
+    <div class="page-header pb-4 text-center">
+
+      <h1 class="nameHeader mb-3">James Vargo</h1>
+      <h5 class="fontA colorA font-weight-light mb-3">Software Developer</h5>
+      <h5 class="fontA font-weight-light small">Tokyo, Japan</h5>
+      <h5 class="fontA font-weight-light small">jvargeaux@gmail.com</h5>
+
+      <div class="contact row justify-content-center mx-auto pt-5">
+        <!-- Github -->
+        <a href="https://github.com/jvargeaux?tab=repositories" target="_blank" class="contact-item">
+          <i class="fab fa-github-square fa-2x"></i>
+          <p class="pt-1">GitHub</p>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/james-vargo-34b4a0104/" target="_blank" class="contact-item">
+          <i class="fab fa-linkedin fa-2x"></i>
+          <p class="pt-1">LinkedIn</p>
+        </a>
+      </div>
     </div>
-  </div>
+
+    <h2 class="text-center fontA my-5">Who am I?</h2>
+    <div class="d-flex flex-column mx-6 align-items-center mb-5">
+
+      <!-- Image & Bullets -->
+      <div class="d-flex w-100 mb-5 justify-content-center align-items-center">
+        <div class="text-center portrait">
+          <img src="./assets/portrait.jpg" class="img-thumbnail rounded-circle" style="max-width: 200px;" />
+        </div>
+        <ul class="fontA mx-3">
+          <li class="my-2">Software Developer</li>
+          <li class="my-2">Living in Tokyo, Japan</li>
+          <li class="my-2">American</li>
+          <li class="my-2">日本語能力：日常会話</li>
+        </ul>
+      </div>
+
+      <!-- Bio -->
+      <div class="bio-text px-5 align-self-center">
+        <p class="fontA">I'm a lead frontend software engineer, with fullstack experience in my personal projects. I enjoy <strong class="colorA">building</strong> things and <strong class="colorA">expanding my knowledge</strong> of technology.</p>
+        <p class="fontA mt-4">I've led a small team of 3-4 frontend developers and UI designers. I have a strong policy of writing <strong class="colorB">clean</strong> and <strong class="colorB">readable</strong> code, and delivering projects <strong class="colorB">on time</strong>.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Experience -->
+  <section class="experience py-5 text-center">
+
+    <h3 class="colorB text-center fontA mt-5 mb-3">Experience</h3>
+    <h5 class="mb-4">3 years</h5>
+
+    <div class="d-inline-flex flex-column mt-3 mb-3 text-left">
+      <div class="d-inline-flex mb-3 fontA align-items-center">
+        <p class="col-3 m-0 colorB text-right text-nowrap">2020-2022</p>
+        <i class="col-2 colorB text-center fas fa-briefcase fa-lg mr-2"></i>
+        <p class="m-0 colorB text-nowrap">Lead Front End Developer, Interakt Inc.</p>
+      </div>
+      <div class="d-inline-flex mb-3 fontA align-items-center">
+        <p class="col-3 m-0 colorB text-right text-nowrap">2016-2017</p>
+        <i class="col-2 colorB text-center fas fa-briefcase fa-lg mr-2"></i>
+        <p class="m-0 colorB text-nowrap">Freelance Front End Developer</p>
+      </div>
+    </div>
+
+    <div class="cards d-flex justify-content-center flex-wrap">
+
+      <div class="card skills-card m-5">
+        <div class="card-body">
+          <p class="colorB">Frond End</p>
+          <div class="container text-left">
+            <div class="d-flex row mb-2 fontA align-items-center">
+              <i class="col-1 text-right fas fa-check mr-3"></i>
+              <p class="m-0">HTML, CSS, Bootstrap</p>
+            </div>
+            <div class="d-flex row mb-2 fontA align-items-center">
+              <i class="col-1 text-right fab fa-react fa-lg react mr-3"></i>
+              <p class="m-0">React, Redux, Saga</p>
+            </div>
+            <div class="d-flex row mb-2 fontA align-items-center">
+              <i class="col-1 text-right fab fa-vuejs fa-lg vue mr-3"></i>
+              <p class="m-0">Vue, Vuex</p>
+            </div>
+            <div class="d-flex row mb-2 fontA align-items-center">
+              <i class="col-1 text-right fab fa-angular fa-lg angular mr-3"></i>
+              <p class="m-0">Angular</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card skills-card m-5">
+        <div class="card-body">
+          <p class="colorB">Back End</p>
+          <div class="container text-left">
+            <div class="d-flex row mb-2 fontA align-items-center">
+              <i class="col-1 text-right fas fa-check mr-3"></i>
+              <p class="m-0">Node.js</p>
+            </div>
+            <div class="d-flex row mb-2 fontA align-items-center">
+              <i class="col-1 text-right fas fa-check mr-3"></i>
+              <p class="m-0">MongoDB</p>
+            </div>
+            <div class="d-flex row mb-2 fontA align-items-center">
+              <i class="col-1 text-right fas fa-check mr-3"></i>
+              <p class="m-0">Socket.io</p>
+            </div>
+            <div class="d-flex row mb-2 fontA align-items-center">
+              <i class="col-1 text-right fas fa-check mr-3"></i>
+              <p class="m-0">Nginx, Linux, OpenSSL</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="my-5 d-inline-flex align-items-center colorB">
+      <div class="d-inline-flex mb-2 fontA align-items-center">
+        <i class="col-1 text-right fas fa-check mr-3"></i>
+        <p class="m-0">Javascript</p>
+      </div>
+      <div class="d-inline-flex mb-2 fontA align-items-center">
+        <i class="col-1 text-right fas fa-check mr-3"></i>
+        <p class="m-0">Typescript</p>
+      </div>
+      <div class="d-inline-flex mb-2 fontA align-items-center">
+        <i class="col-1 text-right fas fa-check mr-3"></i>
+        <p class="m-0">Python</p>
+      </div>
+      <div class="d-inline-flex mb-2 fontA align-items-center">
+        <i class="col-1 text-right fas fa-check mr-3"></i>
+        <p class="m-0">Java</p>
+      </div>
+      <div class="d-inline-flex mb-2 fontA align-items-center">
+        <i class="col-1 text-right fas fa-check mr-3"></i>
+        <p class="m-0">Git</p>
+      </div>
+    </div>
+
+    <h3 class="text-center fontA mt-5">Education</h3>
+
+    <div class="d-inline-flex flex-column mt-3 mb-3 text-left">
+      <div class="d-inline-flex mb-3 fontA align-items-center">
+        <p class="col-3 m-0 text-right text-nowrap">2016</p>
+        <i class="col-2 text-center fas fa-graduation-cap fa-lg mr-2"></i>
+        <p class="m-0 text-nowrap">Biola University, B.A. Media Production</p>
+      </div>
+    </div>
+
+  </section>
+
 
   <!-- Projects -->
-  <div class="container pb-1">
+  <section class="projects">
 
-    <div class="projects mx-auto mb-5 pb-5">
-      <h2 class="text-center my-5 fontA">Projects</h2>
+    <h2 class="text-center my-5 pb-5 fontA">Projects</h2>
 
-      <!-- Pathfinding Visualizer -->
-      <a href="https://a-star-pathfinding-visualizer.herokuapp.com" target="_blank" class="project-item mb-4 rounded row no-gutters">
+    <div class="project-list">
+      <!-- Scrybe -->
+      <a href="https://scrybe-app.com" target="_blank" class="project-item mb-5 rounded row no-gutters">
         <div class="col-5">
-          <img src="./assets/pathfinding.gif" class="card-img project-img" />
+          <img src="./assets/scrybe.png" class="card-img project-img" />
         </div>
         <div class="col-7">
           <div class="card-body">
-            <h4 class="project-title">A* Pathfinding Visualizer</h4>
-            <h5 class="project-desc">Visualizer for the A* (A-star) pathfinding algorithm, a commonly used algorithm in many apps and games to find the shortest possible path. Warning: slow load time because app is built on load.</h5>
-            <p>Technologies:</p>
+            <h4 class="project-title">Scrybe</h4>
+            <p class="small">scrybe-app.com</p>
+            <h5 class="project-desc">An app I built from scratch. This is an app for writers, creators, and storytellers to visualize and organize their worldbuilding.</h5>
+            <p class="mt-4 mb-0">Integrated Technologies:</p>
             <ul>
-              <li>React.js</li>
-              <li>State management with React Hooks</li>
-              <li>HTML, CSS, Vanilla JS</li>
+              <li>Vue / Vuex Frontend</li>
+              <li>REST API</li>
+              <li>Node.js Backend</li>
+              <li>Nginx Server</li>
+              <li>MongoDB (Mongoose)</li>
+              <li>Socket.io</li>
+              <li>TSL with OpenSSL</li>
+              <li>Custom logger with Tail</li>
+              <li>Transactional emails with SendGrid</li>
+              <li>Separate Admin site</li>
             </ul>
           </div>
         </div>
       </a>
-
-      <!-- Cafe Tour Tokyo -->
-      <a href="https://cafe-tour-tokyo.herokuapp.com" target="_blank" class="project-item mb-4 rounded row no-gutters">
-        <div class="col-5">
-          <img src="./assets/cafetour.gif" class="card-img project-img" />
-        </div>
-        <div class="col-7">
-          <div class="card-body">
-            <h4 class="project-title">Cafe Tour Tokyo</h4>
-            <h5 class="project-desc">Cafe review website for people looking for a public place to work in the Tokyo area. MEVN stack.</h5>
-            <p>Technologies:</p>
-            <ul>
-              <li>Backend: Node.js, Express, MongoDB</li>
-              <li>Frontend: Vue.js</li>
-              <li>RESTful API (Express, Fetch API)</li>
-              <li>Login Authentication (JSON Web Tokens)</li>
-              <li>Secure Password Storage (bcrypt)</li>
-            </ul>
-          </div>
-        </div>
-      </a>
-
-      <!-- Personal Blog -->
-      <a href="http://jimmyloves.coffee" target="_blank" class="project-item mb-4 rounded row no-gutters">
-        <div class="col-5">
-          <img src="./assets/blog.png" class="card-img project-img" />
-        </div>
-        <div class="col-7">
-          <div class="card-body">
-            <h4 class="project-title">Personal Blog</h4>
-            <h5 class="project-desc">My public personal blog website, featuring a form that adds an email address to an email list in a database and sends a transactional email upon submission.</h5>
-            <p>Technologies:</p>
-            <ul>
-              <li>Backend: Node.js, Express, MongoDB</li>
-              <li>Frontend: Vue.js</li>
-              <li>State managament with Vuex</li>
-              <li>RESTful API (Express, Fetch API)</li>
-              <li>Automatic email: Google API, OAuth2</li>
-            </ul>
-          </div>
-        </div>
-      </a>
-
-      <!-- JVargoDesign -->
-      <a href="https://jvargeaux.github.io/jvargodesign" target="_blank" class="project-item mb-4 rounded row no-gutters">
-        <div class="col-5">
-          <img src="./assets/jvargodesign.gif" class="card-img project-img" />
-        </div>
-        <div class="col-7">
-          <div class="card-body">
-            <h4 class="project-title">JVargoDesign</h4>
-            <h5 class="project-desc">Old design portfolio website created in 2016 used to get my freelance clients.</h5>
-            <p>Technologies:</p>
-            <ul>
-              <li>Frontend: HTML, CSS, Vanilla JS</li>
-              <li>Backend: PHP Email Contact Form</li>
-            </ul>
-          </div>
-        </div>
-      </a>
-
-    </div>
-
   </div>
 
-  <!-- Skills, Experience, & Education -->
-  <section class="experience py-5">
-    <!-- About Me -->
-    <h2 class="text-center fontA my-5">Who am I?</h2>
-    <div class="d-flex mx-6 justify-content-center mb-5">
-      <div class="col-3 text-center">
-        <img src="./assets/portrait.jpg" class="img-thumbnail rounded-circle" style="max-width: 200px;" />
-      </div>
-      <div class="col-6 align-self-center">
+  <div class="project-list mt-5 pt-5">
+    <h3 class="text-center">Work Projects</h3>
+    <p class="text-center project-desc">For client privacy, I cannot include links in this portfolio.</p>
 
-        <p class="fontA">I'm an American from Washington, DC, living in Tokyo. 26 years old. I grew up in 3 different countries.<br><br>I enjoy writing clean, readable code. I love building things and expanding my knowledge, so I can build newer and better things. I learn quickly, and am always looking to learn from the people around me.<br><br>日本語能力：日常会話</p>
-      </div>
-    </div>
-    <h2 class="text-center fontA my-5">Skills</h2>
-    <ul class="skills-list py-5 mx-auto row justify-content-center">
-      <li class="mb-5 fontA colorA col-3"><i class="fas fa-check mr-3"></i>HTML</li>
-      <li class="mb-5 fontA colorA col-3"><i class="fas fa-check mr-3"></i>CSS</li>
-      <li class="mb-5 fontA colorA col-3"><i class="fas fa-check mr-3"></i>JS</li>
-      <li class="mb-5 fontA colorA col-3"><i class="fas fa-check mr-3"></i>Bootstrap</li>
-      <li class="mb-5 fontA colorA col-3"><i class="fas fa-check mr-3"></i>React.js</li>
-      <li class="mb-5 fontA colorA col-3"><i class="fas fa-check mr-3"></i>Vue.js</li>
-      <li class="mb-5 fontA colorA col-3"><i class="fas fa-check mr-3"></i>Node.js</li>
-      <li class="mb-5 fontA colorA col-3"><i class="fas fa-check mr-3"></i>MongoDB</li>
-      <li class="mb-5 fontA colorA col-3"><i class="fas fa-check mr-3"></i>Git</li>
-      <li class="mb-5 fontA colorA col-3"><i class="fas fa-check mr-3"></i>Slack</li>
-      <li class="mb-5 fontA colorA col-3"><i class="fas fa-check mr-3"></i>Agile (SCRUM)</li>
-    </ul>
-    <ul class="skills-list pb-5 mx-auto row text-center">
-      <li class="mb-5 fontA col-12"><i class="fas fa-briefcase fa-2x mr-4 align-middle"></i><span class="fontA colorA mr-3">Experience:</span>1 year (2016-2017) Freelance Front End Web Developer</li>
-      <li class="mb-5 fontA col-12"><i class="fas fa-graduation-cap fa-2x mr-4 align-middle"></i><span class="fontA colorA mr-3">Education:</span>2016 Biola University, Media Production</li>
-    </ul>
+    <h4>Pixy</h4>
+    <p class="project-desc">I've worked on expansions and rennovations to this site with <strong class="colorA">10,000+ users</strong>. The site is a platform for users to buy, sell, and request pieces of software.</p>
+
+    <h4>Atlantis</h4>
+    <p class="project-desc">This is a trading bot site of which I was in charge of developing the <strong class="colorA">frontend from scratch</strong>. Includes user subscriptions, two factor authentication with Google Authenticator, third party API integration, and custom algorithms I wrote for summing asset values.</p>
+  </div>
+
+
   </section>
 
 </body>

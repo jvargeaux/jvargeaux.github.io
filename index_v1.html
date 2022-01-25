@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/549c2dc422.js" crossorigin="anonymous"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" >
+  <title>James Vargo | Software Developer</title>
+</head>
+
+
+<body>
+
+  <!-- Header (Info & Contact) -->
+  <div class="page-header jumbotron pb-4 text-center">
+    <h1 class="nameHeader mb-3">James Vargo</h1>
+    <h5 class="fontA colorA font-weight-light">Software Developer</h5>
+    <div class="contact row justify-content-around mx-auto pt-5">
+      <!-- Github -->
+      <a href="https://github.com/jvargeaux?tab=repositories" target="_blank" class="contact-item">
+        <i class="fab fa-github-square fa-2x"></i>
+        <p class="pt-1">GitHub</p>
+      </a>
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/james-vargo-34b4a0104/" target="_blank" class="contact-item">
+        <i class="fab fa-linkedin fa-2x"></i>
+        <p class="pt-1">LinkedIn</p>
+      </a>
+      <!-- Email -->
+      <a href="mailto:jvargeaux@gmail.com" class="contact-item">
+        <i class="fas fa-envelope fa-2x"></i>
+        <p class="pt-1">jvargeaux@gmail.com</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <div class="container pb-1">
+
+    <div class="projects mx-auto mb-5 pb-5">
+      <h2 class="text-center my-5 pb-5 fontA">Projects</h2>
+
+      <!-- Pathfinding Visualizer -->
+      <a href="https://a-star-pathfinding-visualizer.herokuapp.com" target="_blank" class="project-item mb-5 rounded row no-gutters">
+        <div class="col-5">
+          <img src="./assets/pathfinding.gif" class="card-img project-img" />
+        </div>
+        <div class="col-7">
+          <div class="card-body">
+            <h4 class="project-title">A* Pathfinding Visualizer</h4>
+            <h5 class="project-desc">Visualizer for the A* (A-star) pathfinding algorithm, a commonly used algorithm in many apps and games to find the shortest possible path. Warning: slow load time because app is built on load.</h5>
+            <p>Technologies:</p>
+            <ul>
+              <li>React.js</li>
+              <li>State management with React Hooks</li>
+              <li>HTML, CSS, Vanilla JS</li>
+            </ul>
+          </div>
+        </div>
+      </a>
+
+      <!-- Cafe Tour Tokyo -->
+      <a href="https://cafe-tour-tokyo.herokuapp.com" target="_blank" class="project-item mb-5 rounded row no-gutters">
+        <div class="col-5">
+          <img src="./assets/cafetour.gif" class="card-img project-img" />
+        </div>
+        <div class="col-7">
+          <div class="card-body">
+            <h4 class="project-title">Cafe Tour Tokyo</h4>
+            <h5 class="project-desc">Cafe review website for people looking for a public place to work in the Tokyo area. MEVN stack.</h5>
+            <p>Technologies:</p>
+            <ul>
+              <li>Backend: Node.js, Express, MongoDB</li>
+              <li>Frontend: Vue.js</li>
+              <li>RESTful API (Express, Fetch API)</li>
+              <li>Login Authentication (JSON Web Tokens)</li>
+              <li>Secure Password Storage (bcrypt)</li>
+            </ul>
+          </div>
+        </div>
+      </a>
+
+      <!-- Personal Blog -->
+      <a href="http://jimmyloves.coffee" target="_blank" class="project-item mb-5 rounded row no-gutters">
+        <div class="col-5">
+          <img src="./assets/blog.png" class="card-img project-img" />
+        </div>
+        <div class="col-7">
+          <div class="card-body">
+            <h4 class="project-title">Personal Blog</h4>
+            <h5 class="project-desc">My public personal blog website, featuring a form that adds an email address to an email list in a database and sends a transactional email upon submission.</h5>
+            <p>Technologies:</p>
+            <ul>
+              <li>Backend: Node.js, Express, MongoDB</li>
+              <li>Frontend: Vue.js</li>
+              <li>State managament with Vuex</li>
+              <li>RESTful API (Express, Fetch API)</li>
+              <li>Automatic email: Google API, OAuth2</li>
+            </ul>
+          </div>
+        </div>
+      </a>
+
+      <!-- JVargoDesign -->
+      <a href="https://jvargeaux.github.io/jvargodesign" target="_blank" class="project-item mb-5 rounded row no-gutters">
+        <div class="col-5">
+          <img src="./assets/jvargodesign.gif" class="card-img project-img" />
+        </div>
+        <div class="col-7">
+          <div class="card-body">
+            <h4 class="project-title">JVargoDesign</h4>
+            <h5 class="project-desc">Old design portfolio website created in 2016 used to get my freelance clients.</h5>
+            <p>Technologies:</p>
+            <ul>
+              <li>Frontend: HTML, CSS, Vanilla JS</li>
+              <li>Backend: PHP Email Contact Form</li>
+            </ul>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- Skills, Experience, & Education -->
+  <section class="experience py-5">
+    <!-- About Me -->
+    <h2 class="text-center fontA my-5">Who am I?</h2>
+    <div class="d-flex mx-6 justify-content-center mb-5">
+      <div class="col-3 text-center">
+        <img src="./assets/portrait.jpg" class="img-thumbnail rounded-circle" style="max-width: 200px;" />
+      </div>
+      <div class="col-6 align-self-center">
+
+        <p class="fontA">I'm an American from Washington, DC, living in Tokyo. 26 years old. I grew up in 3 different countries.<br><br>I enjoy writing clean, readable code. I love building things and expanding my knowledge, so I can build newer and better things. I learn quickly, and am always looking to learn from the people around me.<br><br>日本語能力：日常会話</p>
+      </div>
+    </div>
+    <h2 class="text-center fontA my-5">Skills</h2>
+    <ul class="skills-list py-5 mx-auto row justify-content-center">
+      <li class="mb-5 fontA colorA col-3"><i class="fas fa-check mr-3"></i>HTML</li>
+      <li class="mb-5 fontA colorA col-3"><i class="fas fa-check mr-3"></i>CSS</li>
+      <li class="mb-5 fontA colorA col-3"><i class="fas fa-check mr-3"></i>JS</li>
+      <li class="mb-5 fontA colorA col-3"><i class="fas fa-check mr-3"></i>Bootstrap</li>
+      <li class="mb-5 fontA colorA col-3"><i class="fas fa-check mr-3"></i>React.js</li>
+      <li class="mb-5 fontA colorA col-3"><i class="fas fa-check mr-3"></i>Vue.js</li>
+      <li class="mb-5 fontA colorA col-3"><i class="fas fa-check mr-3"></i>Node.js</li>
+      <li class="mb-5 fontA colorA col-3"><i class="fas fa-check mr-3"></i>MongoDB</li>
+      <li class="mb-5 fontA colorA col-3"><i class="fas fa-check mr-3"></i>Git</li>
+      <li class="mb-5 fontA colorA col-3"><i class="fas fa-check mr-3"></i>Slack</li>
+      <li class="mb-5 fontA colorA col-3"><i class="fas fa-check mr-3"></i>Agile (SCRUM)</li>
+    </ul>
+    <ul class="skills-list pb-5 mx-auto row text-center">
+      <li class="mb-5 fontA col-12"><i class="fas fa-briefcase fa-2x mr-4 align-middle"></i><span class="fontA colorA mr-3">Experience:</span>1 year (2016-2017) Freelance Front End Web Developer</li>
+      <li class="mb-5 fontA col-12"><i class="fas fa-graduation-cap fa-2x mr-4 align-middle"></i><span class="fontA colorA mr-3">Education:</span>2016 Biola University, Media Production</li>
+    </ul>
+  </section>
+
+</body>
+
+
+</html>

@@ -1,24 +1,41 @@
-.colorA {
-  color: #2bbf74;
+
+html {
+  background-color: #333;
 }
-.fontA {
+
+html, body {
   font-family: 'Quicksand', sans-serif;
   font-weight: 400;
 }
+
 body {
   background-color: #fff;
   min-height: 100vh;
 }
+
 a, a:hover {
   text-decoration: none;
   color: inherit;
+}
+
+.colorA {
+  color: #78e4ba;
+}
+.colorB {
+  color: #f9c85d;
+}
+
+.fontA {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
 }
 
 
 /* Header */
 
 .page-header {
-  background-color: #ebeef2;
+  color: #fff;
+  padding-top: 5rem;
 }
 
 .nameHeader{
@@ -26,8 +43,17 @@ a, a:hover {
   font-size: 36px;
 }
 
+.small {
+  font-size: 1rem;
+}
+
 .contact {
-   max-width: 600px;
+  max-width: 600px;
+}
+
+.contact a {
+  margin: 1rem 2rem;
+  color: #ccc;
 }
 
 
@@ -44,7 +70,14 @@ a, a:hover {
 }
 
 .projects {
-  margin-top: 80px;
+  padding-top: 2rem;
+  padding-bottom: 10rem;
+  color: #fff;
+  background-color: #111;
+}
+
+.project-list {
+  margin: auto;
   max-width: 800px;
 }
 
@@ -76,13 +109,51 @@ a, a:hover {
 
 /* Experience & Education */
 
+.bio {
+  background-color: #202020;
+  color: #e4e4e4;
+}
+
+.bio-text {
+  width: 640px;
+  max-width: 640px;
+}
+
+.portrait {
+  user-select: none;
+}
+
 .experience {
+  background-color: #3a6e6e;
+  color: #fff;
+}
+
+.skills {
   background-color: #2f2f2f;
   color: #e4e4e4;
 }
 
 .skills-list {
-  font-size: 1.2rem;
+  /* max-width: 65vw; */
+  /* font-size: 1rem; */
   list-style: none;
-  max-width: 65vw;
+}
+
+.skills-card {
+  width: 300px;
+  min-width: 300px;
+  background-color: #333;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.4);
+  border: 4px solid #777;
+  border-radius: 0.5rem;
+}
+
+.react {
+  color: #44c1d7;
+}
+.vue {
+  color: #248657;
+}
+.angular {
+  color: #951c1c;
 }
