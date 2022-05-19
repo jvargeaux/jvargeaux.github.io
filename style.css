@@ -30,6 +30,15 @@ a, a:hover {
   font-weight: 400;
 }
 
+.scrybe-link {
+  color: #7d7eff;
+  font-weight: 600;
+}
+
+.scrybe-link:hover {
+  color: #78e4ba;
+}
+
 
 /* Header */
 
